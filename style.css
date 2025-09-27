@@ -6,9 +6,7 @@
 }
 
 body {
-    font-family: "PT Sans", sans-serif;
-    color: white;
-    box-shadow: 0px 5px 4px 1px #e7e7e7;
+    font-family: Raleway Regular, sans-serif;
 }
 
 .mw-1440 {
@@ -16,19 +14,43 @@ body {
 }
 
 
+@font-face {
+    font-family: Raleway Regular;
+    src: url('./assets/fonts/Raleway-Regular.ttf');
+}
+
+@font-face {
+    font-family: Raleway Bold;
+    src: url('./assets/fonts/Raleway-Bold.ttf');
+}
+@font-face {
+    font-family: Raleway Italic;
+    src: url('./assets/fonts/Raleway-Italic.ttf');
+}
+@font-face {
+    font-family: Raleway Light;
+    src: url('./assets/fonts/Raleway-Light.ttf');
+}
+
+
+
+
+
+
 /* This section is for the navbar */
 
 .navigation {
     width: 100%;
     height: 130px;
-    margin: auto;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 5px 4px 1px #e7e7e7;
 }
 
 nav {
     display: flex;
-    align-items: flex-end;
     justify-content: center;
     height: 100%;
     width: 100%;
@@ -40,41 +62,162 @@ nav {
 
 .logo {
     width: 50%;
+    display: flex;
+    align-items: center;
 }
 .links {
     display: flex;
-    justify-content: right;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: flex-end;
     gap: 20px;
     width: 50%;
+    margin-bottom: 11px;
 }
 
+.toggle-button {
+    position: absolute;
+    margin-left: 80%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 17px;
+}
+.bar {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+
 .nav-link {
-    display: inline-block;
-    font-weight: normal;
+    font-family: Raleway Bold;
     text-decoration: none;
-    transition: 0.4s ease-in-out; 
     color: black;
 }
 
-.active {
+
+.active-link, .nav-link:hover {
     color: green;
     text-decoration: underline;
     text-underline-offset: 12px;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 4px;
 }
 
-.nav-link:hover {
-    color: green;
-    text-decoration: underline;
-    text-underline-offset: 12px;
-    text-decoration-thickness: 3px;
-}
-
-.img-header {
-    height: 90px; 
+.navbar-logo {
+    max-height: 90px; 
     width: auto;
 }
 
 
+/* This section is for the Hero */
+
+.hero {
+    width: 100%;
+    height: calc(100vh - 130px - 200px);
+    display: flex;   
+    justify-content: center; 
+    align-items: center;
+}
+
+
+/* This section is for the footer */
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    box-shadow: 16px 0px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    width: auto;
+    height: 60px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-column {
+    width: 33%;
+}
+
+
+/* This section is for the breakpoints for mobile/tablet */
+
+@media (max-width: 1700px) {
+    nav, .footer-content {
+        padding: 0 130px;
+    }
+}
+
+
+@media (max-width: 1170px) {
+
+    .navbar {
+        padding: 0;
+        width: 100%;
+        display: block;
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .toggle-button {
+        display: flex;
+        top: 55%;               /* z. B. leicht nach unten verschieben */
+        transform: translate(-50%, -55%);
+    }
+
+    .bar1.active{rotate: 45deg; margin-top: 8px;}
+
+    .bar2.active{rotate: -45deg; margin-bottom: 8px;}
+
+    .bar{transition: all .3s ease-in-out;}
+
+    .links.active {
+        display: flex; 
+        text-align: center;
+        transition: 1s ease-in-out;
+        background-color: white;
+        width: 100%;
+        height: 30vh;
+        padding: 50px 0;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    .links.active .nav-link {
+        margin: auto;
+        max-height: 50px
+    }
+
+
+}
 
