@@ -3,38 +3,17 @@
 
 * {
     margin: 0;
+    text-decoration: none;
 }
 
 body {
     font-family: Raleway Regular, sans-serif;
 }
 
+
 .mw-1440 {
     max-width: 1440px;
 }
-
-
-@font-face {
-    font-family: Raleway Regular;
-    src: url('./assets/fonts/Raleway-Regular.ttf');
-}
-
-@font-face {
-    font-family: Raleway Bold;
-    src: url('./assets/fonts/Raleway-Bold.ttf');
-}
-@font-face {
-    font-family: Raleway Italic;
-    src: url('./assets/fonts/Raleway-Italic.ttf');
-}
-@font-face {
-    font-family: Raleway Light;
-    src: url('./assets/fonts/Raleway-Light.ttf');
-}
-
-
-
-
 
 
 /* This section is for the navbar */
