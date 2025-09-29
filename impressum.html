@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochwelt</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+
+    <style>
+        .impressum-text {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background-color: #ebebeb;
+            gap: 20px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="page-wrapper">
+    <header class="navigation">
+        <a onclick="openMenu()" href="#" class="toggle-button" >
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+        </a>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
+            </div>
+            <div class="links">
+                <a class="nav-link" href="index.html">Start</a>
+                <a class="nav-link" href="recipe-of-the-day-mischa.html">Rezept des Tages</a>
+                <a class="nav-link" href="#">Kontakt</a>
+                <a class="nav-link" href="#">Impressum</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero impressum-text">
+            <h1>Impressum</h1>
+    
+            <p>Mischa Siegrist<br />
+            Wychelstrasse 44<br />
+            3800 Matten b. Interlaken<br />
+            Schweiz</p>
+    
+            <h2>Kontakt</h2>
+            E-Mail: mischa@tatanka.ch</p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <img class="footer-logo" src="./assets/img/logo_small.png" alt="Logo">
+            </div>
+            <div class="copyright footer-column">
+                <p>© 2025 Mischa Siegrist, Secan Akbulut, Denny Hartmann</p>
+            </div>
+            <div class="footer-links footer-column">
+                <a href="#">Impressum</a>
+                <a href="privacy.html">Datenschutzerkl&auml;rung</a>
+            </div>
+        </div>
+    </footer>
+</div>
+    <div id="unsupported-msg" class="hidden">
+        <h2>Die Größe Ihres Bildschirms wird nicht unterstützt</h2>
+        <p>Bitte nutzen Sie ein Gerät mit einer größeren Auflösung.</p>
+    </div>
+     <script src="./script.js"></script>
+</body>
+</html>
