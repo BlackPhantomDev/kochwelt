@@ -15,27 +15,32 @@ body {
     max-width: 1440px;
 }
 
+#unsupported-msg {
+    display: none;
+}
 
 /* This section is for the navbar */
 
 .navigation {
+    margin: auto;
     width: 100%;
     height: 130px;
     display: flex;
     justify-content: center;
-    position: relative;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    box-shadow: 0px 5px 4px 1px #e7e7e7;
+    position: relative;
 }
 
-nav {
+.navbar {
     display: flex;
+    align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
     max-width: 1440px;
     font-size: 20px;
-    font-family: "Raleway", sans-serif;
+    font-family: Raleway Regular;
 }
 
 
@@ -50,32 +55,15 @@ nav {
     justify-content: flex-end;
     gap: 20px;
     width: 50%;
-    margin-bottom: 11px;
+    height: 100%;
+    margin-bottom: 20px;
 }
-
-.toggle-button {
-    position: absolute;
-    margin-left: 80%;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 17px;
-}
-.bar {
-    height: 2px;
-    width: 100%;
-    background-color: black;
-    border-radius: 10px;
-}
-
 
 .nav-link {
     font-family: Raleway Bold;
     text-decoration: none;
     color: black;
 }
-
 
 .active-link, .nav-link:hover {
     color: green;
@@ -88,6 +76,24 @@ nav {
     max-height: 90px; 
     width: auto;
 }
+
+.toggle-button {
+    position: absolute;
+    margin-left: 80%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 17px;
+}
+
+.bar {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
 
 
 /* This section is for the Hero */
@@ -136,21 +142,19 @@ footer {
     color: black;
 }
 
-.footer-column {
-    width: 33%;
-}
+
 
 
 /* This section is for the breakpoints for mobile/tablet */
 
 @media (max-width: 1700px) {
-    nav, .footer-content {
+    .navbar, .footer-content {
         padding: 0 130px;
     }
 }
 
 
-@media (max-width: 1170px) {
+@media (max-width: 1190px) {
 
     .navbar {
         padding: 0;
@@ -163,6 +167,11 @@ footer {
         display: flex;
         justify-content: center;
         width: 100%;
+        height: 100%;
+    }
+    .logo img {
+        margin: auto;
+        max-height: 90px;
     }
 
     .links {
@@ -183,20 +192,108 @@ footer {
 
     .links.active {
         display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         transition: 1s ease-in-out;
         background-color: white;
         width: 100%;
         height: 30vh;
-        padding: 50px 0;
+        padding: 10px 0;
+        gap: 50px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     }
 
-    .links.active .nav-link {
+    .links.active .navLink {
         margin: auto;
         max-height: 50px
+    }
+
+    .footer-content {
+        padding: 0 80px;
     }
 
 
 }
 
+@media (max-width: 992px) {
+    .footer-content {
+        padding: 0 60px;
+    }
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-content {
+        max-width: 1440px;
+        gap: 30px;
+    }
+
+    .footer-column {
+        display: flex;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-logo {
+        height: 60px;
+    }
+    footer {
+        height: auto
+    }
+
+    .footer-content {
+        flex-direction: column;
+        justify-content: center;
+        max-width: 1440px;
+        gap: 30px;
+        padding: 20px 60px;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-column {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+
+/* This section is only for too small devices */
+
+/* hide the content */
+.page-wrapper { display: none; }
+/* If device width is higher than 320px, content shows */
+@media (min-width: 321px) { .page-wrapper { display: block; } }
+
+/* otherwise the message shows up */
+@media (max-width: 320px) {
+    #unsupported-msg {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background: #f8d7da;
+        color: #721c24;
+        font-family: sans-serif;
+        height: 100vh;
+    }
+}
