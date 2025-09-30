@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kochwelt</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
 </head>
 <body>
+<div class="page-wrapper">
     <header class="navigation">
         <a onclick="openMenu()" href="#" class="toggle-button" >
             <span class="bar bar1"></span>
             <span class="bar bar2"></span>
         </a>
-        <nav>
+        <nav class="navbar">
             <div class="logo">
-                <a href="index.html"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
+                <a href="#"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
             </div>
             <div class="links">
                 <a class="nav-link active-link" href="#">Start</a>
-                <a class="nav-link" href="./recipe-of-the-day-mischa.html">Rezept des Tages</a>
+                <a class="nav-link" href="recipe-of-the-day-mischa.html">Rezept des Tages</a>
                 <a class="nav-link" href="#">Kontakt</a>
-                <a class="nav-link" href="#">Impressum</a>
+                <a class="nav-link" href="impressum.html">Impressum</a>
             </div>
         </nav>
     </header>
 
-   <section class="hero">
-    <h1>Startseite</h1>
-   </section>
+    <main class="hero">
+        <h1>Startseite</h1>
+    </main>
 
     <footer>
         <div class="footer-content">
@@ -38,12 +41,16 @@
                 <p>© 2025<br> Mischa Siegrist, Secan Akbulut, Denny Hartmann</p>
             </div>
             <div class="footer-links footer-column">
-                <a href="#">Impressum</a>
-                <a href="#">Datenschutzerkl&auml;rung</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="privacy.html">Datenschutzerkl&auml;rung</a>
             </div>
         </div>
     </footer>
-
+</div>
+    <div id="unsupported-msg" class="hidden">
+        <h2>Die Größe Ihres Bildschirms wird nicht unterstützt</h2>
+        <p>Bitte nutzen Sie ein Gerät mit einer größeren Auflösung.</p>
+    </div>
+    <script src="./script.js"></script>
 </body>
- <script src="./script.js"></script>
 </html>
