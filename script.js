@@ -1,6 +1,5 @@
 // The function of the Mobile-Navbar
 
-const toggleButton = document.getElementsByClassName('toggle-button')[0];
 const navbarLinks = document.getElementsByClassName('links')[0];
 const bar1 = document.getElementsByClassName('bar1')[0];
 const bar2 = document.getElementsByClassName('bar2')[0];
@@ -13,10 +12,6 @@ function openMenu() {
     bar2.classList.toggle('active');
 
     navbarLinks.classList.toggle('active');
-
-
-
-
 }
 
 
