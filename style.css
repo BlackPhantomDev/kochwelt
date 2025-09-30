@@ -210,3 +210,92 @@ footer {
         padding: 0 130px;
     }
 }
+
+/*this section is about the potatoe spoup*/
+
+.main-potatoe-soup{
+    max-width: 1440px;
+    margin: auto;
+}
+.potatoe-soup-img {
+    height: 200px;
+    width: 1440px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.infotext-recipe {
+    background-color: #e9e7e7;
+    border-radius: 5px;
+    padding: 0 8px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    
+}
+
+.img-recipe {
+    width: 15px;
+    padding-right: 15px;
+
+}
+
+.cook-info {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+
+}
+.text-color{
+    color: #959595;
+}
+
+.line {
+    height: 2px;
+    
+    background-color: #e9e7e7;
+    margin-top: 75px;
+}
+.button-portionen {
+    
+    border: 15px;
+    background-color: green;
+   
+    width: 165px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+    cursor: pointer;
+}
+.portionen{
+    display: flex;
+    margin: 30px 0 0;
+}
+
+.portionen-text{
+    padding-right: 10px;
+}
+
+#inputfield{
+    
+    border: 2px solid  #e9e7e7;
+    border-radius: 5px 0 0 5px;
+    width: 180px;
+    
+}
+
+.tr-design-color{
+     background-color: #e9e7e7;
+   
+}
+
+tr{
+    height: 50px;
+}
+
+table{
+    width: 100%;
+}
