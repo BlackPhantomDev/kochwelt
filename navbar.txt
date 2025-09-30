@@ -1,0 +1,192 @@
+Der HTML Teil der Navbar :
+
+<header class="navigation">
+    <a onclick="openMenu()" href="#" class="toggle-button" >
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+    </a>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
+        </div>
+        <div class="links">
+            <a class="nav-link" href="index.html">Start</a>
+            <a class="nav-link" href="#">Rezept des Tages</a>
+            <a class="nav-link" href="contact.html">Kontakt</a>
+            <a class="nav-link" href="impressum.html">Impressum</a>
+        </div>
+    </nav>
+</header>
+
+Beim jeweiligen Link zusätzlich die Klasse 'active-link' hinzufügen, 
+um zu highlighten auf welcher Seite mann ist.
+Bspw. beim Impressum : <a class="nav-link active-link" href="impressum.html">Impressum</a>
+
+
+Der CSS Teil der Navbar :
+
+.navigation {
+    margin: auto;
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    max-width: 1440px;
+    font-size: 20px;
+    font-family: Raleway Regular;
+}
+
+
+.logo {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.links {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 20px;
+    width: 50%;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    font-family: Raleway Bold;
+    text-decoration: none;
+    color: black;
+}
+
+.active-link, .nav-link:hover {
+    color: green;
+    text-decoration: underline;
+    text-underline-offset: 12px;
+    text-decoration-thickness: 4px;
+}
+
+.navbar-logo {
+    max-height: 90px; 
+    width: auto;
+}
+
+.toggle-button {
+    position: absolute;
+    margin-left: 80%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 17px;
+}
+
+.bar {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 1700px) {
+    .navbar {
+        padding: 0 130px;
+    }
+}
+
+
+@media (max-width: 1190px) {
+    .navbar {
+        padding: 0;
+        width: 100%;
+        display: block;
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .logo img {
+        margin: auto;
+        max-height: 90px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .toggle-button {
+        display: flex;
+        top: 55%;               /* z. B. leicht nach unten verschieben */
+        transform: translate(-50%, -55%);
+    }
+
+    .bar1.active{rotate: 45deg; margin-top: 8px;}
+
+    .bar2.active{rotate: -45deg; margin-bottom: 8px;}
+
+    .bar{transition: all .3s ease-in-out;}
+
+    .links.active {
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: 1s ease-in-out;
+        background-color: white;
+        width: 100%;
+        height: 30vh;
+        padding: 10px 0;
+        gap: 50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    .links.active .navLink {
+        margin: auto;
+        max-height: 50px
+    }
+}
+
+
+@media (max-width: 576px) {
+    .navbar-logo {
+        height: 60px;
+    }
+}
+
+
+
+
+
+
+
+Der JavaScript Teil der Navbar :
+
+const navbarLinks = document.getElementsByClassName('links')[0];
+const bar1 = document.getElementsByClassName('bar1')[0];
+const bar2 = document.getElementsByClassName('bar2')[0];
+
+
+function openMenu() {
+
+    bar1.classList.toggle('active');
+
+    bar2.classList.toggle('active');
+
+    navbarLinks.classList.toggle('active');
+}
