@@ -1,27 +1,274 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>kochwelt</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochwelt</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
 </head>
+<style>
+    .main-recipe, .recipes, .fun-fact-container {
+        display: flex;
+        margin: auto;
+        height: 400px;
+    }
+
+    .main-recipe {
+        padding: 60px 130px;
+        gap: 40px;
+    }
+
+    .recipes, .fun-fact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 130px;
+    }
+
+    .gray-container {
+        background-color: rgb(238, 238, 238);
+    }
+
+    .main-recipe-img {
+        display: flex;
+        align-items: center;
+        width: 50%;
+    }
+    .main-recipe-img img {
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 7px;
+    }
+    h3 {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+    .main-recipe-img-caption {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: 50%;
+        width: 50%;
+    }
+    .main-recipe-img-caption p {
+        font-size: 18px;
+    }
+    .btn-to-recipe {
+        text-decoration: none;
+        color: white;
+        background-color: rgb(0, 150, 0);
+        padding: 10px 40px;
+        max-width: 103px;
+    }
+
+    .recipes-columns, .fun-fact {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .recipes-columns {
+        gap: 20px;
+    }
+
+    .column-img img, .fun-fact-img img {
+        width: 100%;
+        max-height: 250px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 7px;
+    }
+    .column-caption {
+        text-align: center;
+        font-family: Raleway Bold;
+        color: black;
+    }
+
+    .fun-fact {
+        gap: 100px;
+    }
+
+    .fun-fact-caption {
+        font-family: Raleway Regular;
+        width: 70%;
+    }
+
+    /* @media (max-width: 1187px) {
+        .column-img img, .fun-fact-img img {
+            width: 200px;
+        }
+    } */
+
+    @media (max-width: 992px) {
+        .main-recipe, .recipes, .fun-fact-container {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        .fun-fact-caption {
+            width: 50%;
+        }
+        /* .column-img img, .fun-fact-img img {
+            width: 160px;
+        } */
+    }
+
+    @media (max-width: 767px) {
+        .main-recipe, .recipes, .fun-fact-container {
+            height: auto;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        .main-recipe, .recipes-columns, .fun-fact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding-top: 30px;
+        }
+
+        .main-recipe-img, .main-recipe-img-caption {
+            width: 100%;
+            gap: 20px;
+        }
+
+        .column-img, .fun-fact-img {
+            display: flex;
+            justify-content: center;
+        }
+        .column-img img, .fun-fact-img img {
+            width: 70%;
+        }
+
+        .fun-fact-caption {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .main-recipe, .recipes, .fun-fact-container {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+    }
+
+
+</style>
 <body>
-    <section class="header">
-        <div class="navigation">
-            <img class='img_header'src="./assets/img/logo.png" alt="Bild Kochwelt">
-            <nav>
-            
-            <a class="nav_link" href="#">Start</a>
-            <a class="nav_link active" href="#">Rezept des Tages</a>
-            <a class="nav_link" href="#">Kontakt</a>
-            <a class="nav_link" href="#">Impressum</a>
-            
-            </nav>
+<div class="page-wrapper">
+    <header class="navigation">
+        <a onclick="openMenu()" href="#" class="toggle-button" >
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+        </a>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
+            </div>
+            <div class="links">
+                <a class="nav-link" href="index.html">Start</a>
+                <a class="nav-link active-link" href="#">Rezept des Tages</a>
+                <a class="nav-link" href="#">Kontakt</a>
+                <a class="nav-link" href="impressum.html">Impressum</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <div class="main-recipe mw-1440">
+                <figure class="main-recipe-img">
+                    <img src="./assets/img/croissant.jpg" alt="Croissants">
+                </figure>
+                <figcaption class="main-recipe-img-caption">
+                    <h3>Franz&ouml;siche Croissants</h3>
+                    <p>
+                        Schmackhafte Croissants k&ouml;nnen auch zu Hause sehr einfach gebacken werden. 
+                        Mit ca. 30 Minuten Aufwand kannst du ein wundervolles Fr&uuml;hstück zaubern.
+                    </p>
+                    <a class="btn-to-recipe" href="#">Rezept &ouml;ffnen</a>
+                </figcaption>
+            </div>
+        </section>
+    
+        <section class="gray-container">
+            <div class="recipes mw-1440">
+                <h3>Lust auf was neues?</h3>
+                <div class="recipes-columns">
+                    <div class="column">
+                        <a href="#">
+                            <figure class="column-img">
+                                <img src="./assets/img/salad.jpg" alt="">
+                            </figure>
+                            <figcaption class="column-caption">
+                                Salat
+                            </figcaption>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="#">
+                            <figure class="column-img">
+                                <img src="./assets/img/salad.jpg" alt="">
+                            </figure>
+                            <figcaption class="column-caption">
+                                Salat
+                            </figcaption>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="#">
+                            <figure class="column-img">
+                                <img src="./assets/img/salad.jpg" alt="">
+                            </figure>
+                            <figcaption class="column-caption">
+                                Salat
+                            </figcaption>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section>
+            <div class="fun-fact-container mw-1440">
+                <h3>Pfanne vs. Wok - Was ist besser?</h3>
+                <div class="fun-fact">
+                    <figcaption class="fun-fact-caption">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente libero nisi odit suscipit perspiciatis beatae similique assumenda. Quae minima culpa expedita distinctio obcaecati voluptas vero! Quis cupiditate temporibus voluptas illum.</p>
+                    </figcaption>
+                    <figure class="fun-fact-img">
+                        <img src="./assets/img/wok.jpg" alt="">
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <img class="footer-logo" src="./assets/img/logo_small.png" alt="Logo">
+            </div>
+            <div class="copyright footer-column">
+                <p>© 2025<br> Mischa Siegrist, Secan Akbulut, Denny Hartmann</p>
+            </div>
+            <div class="footer-links footer-column">
+                <a href="impressum.html">Impressum</a>
+                <a href="privacy.html">Datenschutzerkl&auml;rung</a>
+            </div>
         </div>
-    </section>
-    </section>
-  
-   
+    </footer>
+</div>
+    <div id="unsupported-msg" class="hidden">
+        <h2>Die Größe Ihres Bildschirms wird nicht unterstützt</h2>
+        <p>Bitte nutzen Sie ein Gerät mit einer größeren Auflösung.</p>
+    </div>
+     <script src="./script.js"></script>
 </body>
- <script src="./script.js"></script>
 </html>

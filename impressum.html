@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+
+    <style>
+        .impressum-text {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background-color: #ebebeb;
+            gap: 20px;
+        }
+    </style>
+
 </head>
 <body>
 <div class="page-wrapper">
@@ -17,20 +28,28 @@
         </a>
         <nav class="navbar">
             <div class="logo">
-                <a href="#"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
+                <a href="index.html"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
             </div>
             <div class="links">
-                <a class="nav-link active-link" href="#">Start</a>
+                <a class="nav-link" href="index.html">Start</a>
                 <a class="nav-link" href="recipe-of-the-day-mischa.html">Rezept des Tages</a>
                 <a class="nav-link" href="#">Kontakt</a>
-                <a class="nav-link" href="impressum.html">Impressum</a>
+                <a class="nav-link" href="#">Impressum</a>
             </div>
         </nav>
     </header>
 
-    <main class="hero">
-        <h1>Startseite</h1>
-    </main>
+    <section class="hero impressum-text">
+            <h1>Impressum</h1>
+    
+            <p>Mischa Siegrist<br />
+            Wychelstrasse 44<br />
+            3800 Matten b. Interlaken<br />
+            Schweiz</p>
+    
+            <h2>Kontakt</h2>
+            E-Mail: mischa@tatanka.ch</p>
+    </section>
 
     <footer>
         <div class="footer-content">
@@ -38,10 +57,10 @@
                 <img class="footer-logo" src="./assets/img/logo_small.png" alt="Logo">
             </div>
             <div class="copyright footer-column">
-                <p>© 2025<br> Mischa Siegrist, Secan Akbulut, Denny Hartmann</p>
+                <p>© 2025 Mischa Siegrist, Secan Akbulut, Denny Hartmann</p>
             </div>
             <div class="footer-links footer-column">
-                <a href="impressum.html">Impressum</a>
+                <a href="#">Impressum</a>
                 <a href="privacy.html">Datenschutzerkl&auml;rung</a>
             </div>
         </div>
@@ -51,6 +70,6 @@
         <h2>Die Größe Ihres Bildschirms wird nicht unterstützt</h2>
         <p>Bitte nutzen Sie ein Gerät mit einer größeren Auflösung.</p>
     </div>
-    <script src="./script.js"></script>
+     <script src="./script.js"></script>
 </body>
 </html>
