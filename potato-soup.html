@@ -47,20 +47,21 @@
         </section>
         <div class="line"></div>
 
-        <div class="portionen">
+        <form class="portionen">
             <p class="portionen-text">Zutaten für</p>
-            <input type="number" id="inputfield" min="1" max="20">
-            <div class="button-portionen">Portionen</div>
-        </div>
+            <input type="number" id="personen" min="1" max="20">
+            <button type="submit" class="button-portionen" onclick="updateZutaten()">Portionen</button>
+        </form>
 
-        <table>
+        <table id="zutaten-tabelle">
             <tr class="tr-design-color">
-                <td>500g Kartoffeln</td>
+                <td data-basis="500">500g Kartoffeln </td>
+                
 
             </tr>
 
             <tr>
-                <td>125g Schinkenspeck</td>
+                <td data-basis="125">125g Schinkenspeck</td>
             </tr>
 
             <tr class="tr-design-color">
@@ -101,6 +102,8 @@
         </span>
     </main>
     </section>
+
+    <script src="./script.js"></script>
 
     <body>
 
