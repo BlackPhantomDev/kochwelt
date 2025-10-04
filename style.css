@@ -1,11 +1,14 @@
 /* This section is for general settings */
 
+* {
+    margin: 0;
+    text-decoration: none;
+}
 
 body {
-    font-family: "PT Sans", sans-serif;
-    margin: 0;
-
+    font-family: Raleway Regular, sans-serif;
 }
+
 
 .mw-1440 {
     max-width: 1440px;
@@ -28,27 +31,32 @@ h2 {
 }
 
 
+#unsupported-msg {
+    display: none;
+}
 
 /* This section is for the navbar */
 
 .navigation {
+    margin: auto;
     width: 100%;
     height: 130px;
-    margin: auto;
     display: flex;
     justify-content: center;
-    box-shadow: 0px 5px 4px 1px #e7e7e7;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    position: relative;
 }
 
-nav {
+.navbar {
     display: flex;
+    align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
     max-width: 1440px;
     font-size: 20px;
-    font-family: "Raleway", sans-serif;
-
+    font-family: Raleway Regular;
 }
 
 
@@ -60,17 +68,16 @@ nav {
 
 .links {
     display: flex;
-    justify-content: flex-end;
     align-items: flex-end;
+    justify-content: flex-end;
     gap: 20px;
     width: 50%;
-    margin-bottom: 10px;
-
+    height: 100%;
+    margin-bottom: 20px;
 }
 
 .nav-link {
-    display: inline-block;
-    font-weight: normal;
+    font-family: Raleway Bold;
     text-decoration: none;
     color: black;
 }
@@ -207,6 +214,129 @@ footer {
 
 @media (max-width: 1700px) {
     nav {
+.active-link, .nav-link:hover {
+    color: green;
+    text-decoration: underline;
+    text-underline-offset: 12px;
+    text-decoration-thickness: 4px;
+}
+
+.navbar-logo {
+    max-height: 90px; 
+    width: auto;
+}
+
+.toggle-button {
+    position: absolute;
+    margin-left: 80%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 17px;
+}
+
+.bar {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+
+
+/* This section is for the Hero */
+
+.hero {
+    width: 100%;
+    height: calc(100vh - 130px - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* This section is for the footer */
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    box-shadow: 16px 0px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    width: auto;
+    height: 60px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: black;
+}
+
+ 
+.contact-form, .impressum-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    background-color: rgb(228, 228, 228);
+    padding: 80px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2);
+}
+
+.impressum-text {
+    align-items: flex-start;
+}
+
+.contact-form h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.contact-form label {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 8px 12px;
+    max-width: 200px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    border: 0;
+    cursor: pointer;
+}
+
+/* This section is for the breakpoints for mobile/tablet */
+
+@media (max-width: 1700px) {
+    .navbar, .footer-content {
         padding: 0 130px;
     }
 }
@@ -309,4 +439,154 @@ table{
     display: flex;
     align-items: center;
     gap: 10px;
+
+@media (max-width: 1190px) {
+
+    .navbar {
+        padding: 0;
+        width: 100%;
+        display: block;
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .logo img {
+        margin: auto;
+        max-height: 90px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .toggle-button {
+        display: flex;
+        top: 55%;               /* z. B. leicht nach unten verschieben */
+        transform: translate(-50%, -55%);
+    }
+
+    .bar1.active{rotate: 45deg; margin-top: 8px;}
+
+    .bar2.active{rotate: -45deg; margin-bottom: 8px;}
+
+    .bar{transition: all .3s ease-in-out;}
+
+    .links.active {
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: 1s ease-in-out;
+        background-color: white;
+        width: 100%;
+        height: 30vh;
+        padding: 10px 0;
+        gap: 50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    .links.active .navLink {
+        margin: auto;
+        max-height: 50px
+    }
+
+    .footer-content {
+        padding: 0 80px;
+    }
+
+    .copyright {
+        display: none;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .footer-content {
+        padding: 0 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-content {
+        max-width: 1440px;
+        gap: 30px;
+    }
+
+
+}
+
+@media (max-width: 610px) {
+    .description-columns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .grey-box {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-logo {
+        height: 60px;
+    }
+    footer {
+        height: auto
+    }
+
+    .footer-content {
+        flex-direction: column;
+        justify-content: center;
+        max-width: 1440px;
+        gap: 30px;
+        padding: 20px 0px;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-column {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+
+
+/* This section is only for too small devices */
+
+/* hide the content */
+.page-wrapper { display: none; }
+/* If device width is higher than 320px, content shows */
+@media (min-width: 321px) { .page-wrapper { display: block; } }
+
+/* otherwise the message shows up */
+@media (max-width: 320px) {
+    #unsupported-msg {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background: #f8d7da;
+        color: #721c24;
+        font-family: sans-serif;
+        height: 100vh;
+    }
 }
