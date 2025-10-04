@@ -43,7 +43,7 @@ h2 {
     height: 130px;
     display: flex;
     justify-content: center;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     position: relative;
 }
@@ -207,14 +207,12 @@ h2 {
     gap: 30px;
 }
 
-footer {
-    background-color: #413c3c;
-    height: 300px;
-}
 
-@media (max-width: 1700px) {
-    nav {
-.active-link, .nav-link:hover {
+
+
+
+.active-link,
+.nav-link:hover {
     color: green;
     text-decoration: underline;
     text-underline-offset: 12px;
@@ -222,7 +220,7 @@ footer {
 }
 
 .navbar-logo {
-    max-height: 90px; 
+    max-height: 90px;
     width: auto;
 }
 
@@ -252,7 +250,7 @@ footer {
     height: calc(100vh - 130px - 200px);
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     gap: 20px;
 }
@@ -264,7 +262,7 @@ footer {
     display: flex;
     width: 100%;
     height: 200px;
-    box-shadow: 16px 0px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 16px 0px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -293,8 +291,9 @@ footer {
     color: black;
 }
 
- 
-.contact-form, .impressum-text{
+
+.contact-form,
+.impressum-text {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -302,7 +301,7 @@ footer {
     background-color: rgb(228, 228, 228);
     padding: 80px;
     border-radius: 10px;
-    box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2);
+    box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.2);
 }
 
 .impressum-text {
@@ -321,7 +320,8 @@ footer {
     gap: 10px;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     padding: 8px 12px;
     max-width: 200px;
 }
@@ -336,20 +336,25 @@ footer {
 /* This section is for the breakpoints for mobile/tablet */
 
 @media (max-width: 1700px) {
-    .navbar, .footer-content {
+
+    .navbar,
+    .footer-content,
+    .main-potatoe-soup {
         padding: 0 130px;
     }
 }
 
 /*this section is about the potatoe spoup*/
 
-.main-potatoe-soup{
+.main-potatoe-soup {
     max-width: 1440px;
     margin: auto;
 }
+
+
 .potatoe-soup-img {
     height: 200px;
-    width: 1440px;
+    width: 100%;
     object-fit: cover;
     border-radius: 15px;
 }
@@ -357,12 +362,13 @@ footer {
 .infotext-recipe {
     background-color: #e9e7e7;
     border-radius: 5px;
-    padding: 0 8px;
+    padding: 0 8px ;
+    margin-bottom: 20px;
     height: 30px;
     display: flex;
     align-items: center;
     width: fit-content;
-    
+
 }
 
 .img-recipe {
@@ -377,21 +383,23 @@ footer {
     margin-top: 25px;
 
 }
-.text-color{
+
+.text-color {
     color: #959595;
 }
 
 .line {
     height: 2px;
-    
     background-color: #e9e7e7;
-    margin-top: 75px;
+    margin-top: 72px;
+    width: 100%;
 }
+
 .button-portionen {
-    
+
     border: 15px;
     background-color: green;
-   
+
     width: 165px;
     display: flex;
     align-content: center;
@@ -400,45 +408,52 @@ footer {
     color: white;
     cursor: pointer;
 }
-.portionen{
+
+.portionen {
     display: flex;
-    margin: 30px 0 0;
-}
-
-.portionen-text{
-    padding-right: 10px;
-}
-
-#inputfield{
-    
-    border: 2px solid  #e9e7e7;
-    border-radius: 5px 0 0 5px;
-    width: 180px;
-    
-}
-
-.tr-design-color{
-     background-color: #e9e7e7;
-   
-}
-
-tr{
-    height: 50px;
-}
-
-table{
+    padding: 20px 0;
     width: 100%;
 }
 
-.profilepic-custom{
-    height: 100px;
+.portionen-text {
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#inputfield {
+
+    border: 2px solid #e9e7e7;
+    border-radius: 5px 0 0 5px;
+    width: 180px;
+
+}
+
+.tr-design-color {
+    background-color: #e9e7e7;
+
+}
+
+tr {
+    height: 50px;
+}
+
+#ingredients {
+    width: 100%;
+    
+}
+
+
+.profilepic-custom {
+    width: 72px;
     border-radius: 50%;
 }
 
-.recipe-from{
+.recipe-from {
     display: flex;
     align-items: center;
     gap: 10px;
+}
 
 @media (max-width: 1190px) {
 
@@ -446,7 +461,7 @@ table{
         padding: 0;
         width: 100%;
         display: block;
-        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
     }
 
     .logo {
@@ -455,6 +470,7 @@ table{
         width: 100%;
         height: 100%;
     }
+
     .logo img {
         margin: auto;
         max-height: 90px;
@@ -466,18 +482,27 @@ table{
 
     .toggle-button {
         display: flex;
-        top: 55%;               /* z. B. leicht nach unten verschieben */
+        top: 55%;
+        /* z. B. leicht nach unten verschieben */
         transform: translate(-50%, -55%);
     }
 
-    .bar1.active{rotate: 45deg; margin-top: 8px;}
+    .bar1.active {
+        rotate: 45deg;
+        margin-top: 8px;
+    }
 
-    .bar2.active{rotate: -45deg; margin-bottom: 8px;}
+    .bar2.active {
+        rotate: -45deg;
+        margin-bottom: 8px;
+    }
 
-    .bar{transition: all .3s ease-in-out;}
+    .bar {
+        transition: all .3s ease-in-out;
+    }
 
     .links.active {
-        display: flex; 
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -488,7 +513,7 @@ table{
         height: 30vh;
         padding: 10px 0;
         gap: 50px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     }
 
     .links.active .navLink {
@@ -527,6 +552,7 @@ table{
         flex-direction: column;
         align-items: center;
     }
+
     .grey-box {
         width: 50%;
     }
@@ -536,6 +562,7 @@ table{
     .navbar-logo {
         height: 60px;
     }
+
     footer {
         height: auto
     }
@@ -573,9 +600,16 @@ table{
 /* This section is only for too small devices */
 
 /* hide the content */
-.page-wrapper { display: none; }
+.page-wrapper {
+    display: none;
+}
+
 /* If device width is higher than 320px, content shows */
-@media (min-width: 321px) { .page-wrapper { display: block; } }
+@media (min-width: 321px) {
+    .page-wrapper {
+        display: block;
+    }
+}
 
 /* otherwise the message shows up */
 @media (max-width: 320px) {
