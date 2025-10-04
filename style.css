@@ -101,9 +101,11 @@ body {
 .hero {
     width: 100%;
     height: calc(100vh - 130px - 200px);
-    display: flex;   
+    display: flex;
+    flex-direction: column;
     justify-content: center; 
     align-items: center;
+    gap: 20px;
 }
 
 
@@ -142,8 +144,45 @@ footer {
     color: black;
 }
 
+ 
+.contact-form, .impressum-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    background-color: rgb(228, 228, 228);
+    padding: 80px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2);
+}
 
+.impressum-text {
+    align-items: flex-start;
+}
 
+.contact-form h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.contact-form label {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 8px 12px;
+    max-width: 200px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    border: 0;
+    cursor: pointer;
+}
 
 /* This section is for the breakpoints for mobile/tablet */
 
@@ -214,17 +253,15 @@ footer {
         padding: 0 80px;
     }
 
+    .copyright {
+        display: none;
+    }
 
 }
 
 @media (max-width: 992px) {
     .footer-content {
         padding: 0 60px;
-    }
-    .footer-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
     }
 }
 
@@ -234,9 +271,17 @@ footer {
         gap: 30px;
     }
 
-    .footer-column {
+
+}
+
+@media (max-width: 610px) {
+    .description-columns {
         display: flex;
-        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .grey-box {
+        width: 50%;
     }
 }
 
@@ -253,7 +298,7 @@ footer {
         justify-content: center;
         max-width: 1440px;
         gap: 30px;
-        padding: 20px 60px;
+        padding: 20px 0px;
     }
 
     .copyright {
@@ -273,6 +318,7 @@ footer {
         align-items: center;
     }
 }
+
 
 
 

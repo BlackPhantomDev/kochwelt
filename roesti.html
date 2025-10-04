@@ -9,9 +9,159 @@
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
 
     <style>
-        table {
+
+
+        main {
+            padding: 0 130px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+        }
+
+        .recipe-header {
+            padding-top: 64px;
             width: 100%;
         }
+
+        .recipe-header-img {
+            width: 100%;
+            padding: 20px 0;
+        }
+        .recipe-header-img img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .description-columns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-description { padding-bottom: 72px;}
+        .description { padding-bottom: 24px;}
+
+        .grey-box {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(241, 241, 241);
+            padding: 6px 8px;
+            border-radius: 10px;
+            gap: 10px;
+        }
+
+        .grey-box img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .seperator {
+            width: 100%;
+            height: 2px;
+            background-color: rgb(241, 241, 241);
+        }
+
+        .recipe-ingredients {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 48px;
+        }
+
+        .calculation {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 0;
+            padding: 20px 0;
+        }
+        .calculation-mobile {
+            display: flex;
+        }
+        .calculation label {
+            padding-right: 10px;
+        }
+        #portions {
+            width: 132px;
+            height: 41px;
+            margin: 0;
+            padding: 0 8px;
+            box-sizing: border-box;
+        }
+        #portions-btn {
+            margin: 0;
+            padding: 0 16px;
+            height: 41px;
+            line-height: 41px;
+            border: none;
+            background: rgb(0,160,0);
+            color: #fff;
+            cursor: pointer;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grey-line {
+            background-color: rgb(241, 241, 241);
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            text-align: left;
+            padding: 14px 24px;
+            border-radius: 10px;
+        }
+
+
+        @media (max-width: 400px) {
+            .calculation {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .preparation {
+            width: 100%;
+            padding-bottom: 48px;
+        }
+        .preparation h2 {
+            padding-bottom: 24px;
+        }
+
+        .author {
+            width: 100%;
+            padding-bottom: 48px;
+        }
+
+        .author h3 {
+            padding-bottom: 24px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .profile-picture {
+            width: 72px;
+            border-radius: 50%;
+        }
+        .profile-caption {
+            font-family: Raleway Light;
+            font-size: 24px;
+        }
+
+
     </style>
 
 </head>
@@ -24,50 +174,87 @@
         </a>
         <nav class="navbar">
             <div class="logo">
-                <a href="#"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
+                <a href="index.html"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
             </div>
             <div class="links">
-                <a class="nav-link active-link" href="#">Start</a>
-                <a class="nav-link" href="recipe-of-the-day-mischa.html">Rezept des Tages</a>
-                <a class="nav-link" href="#">Kontakt</a>
+                <a class="nav-link" href="#">Start</a>
+                <a class="nav-link active-link" href="recipe-of-the-day-mischa.html">Rezept des Tages</a>
+                <a class="nav-link" href="contact.html">Kontakt</a>
                 <a class="nav-link" href="impressum.html">Impressum</a>
             </div>
         </nav>
     </header>
 
-    <main class="hero">
-        <section></section>
+    <main class="mw-1440">
+        <section class="recipe-header">
+            <h1>R&ouml;sti nature</h1>
+            <div class="recipe-header-img">
+                <img src="./assets/img/salad.jpg" alt="Rösti">
+            </div>
+            <div class="description-columns header-description">
+                <span class="grey-box">
+                    <img src="./assets/img/icons/clock-regular.svg" alt="Uhr icon">
+                    <p>60min</p>
+                </span>
+                <span class="grey-box">
+                    <img src="./assets/img/icons/brain-solid.svg" alt="Schwierigkeits icon">
+                    <p>Simpel</p>
+                </span>
+                <span class="grey-box">
+                    <img src="./assets/img/icons/calendar-alt-regular.svg" alt="Kalender icon">
+                    <p>03.10.2025</p>
+                </span>
+            </div>
+        </section>
 
-        <section>
+        <div class="seperator"></div>
 
-            <table class="mw-1440">
+        <section class="recipe-ingredients">
+            <form class="calculation">
+                <label>Zutaten für:</label>
+                <div class="calculation-mobile">
+                    <input id="portions" type="number" min="1" max="20" value="4" >
+                    <button id="portions-btn" onclick="calcIng()">Portion(en)</button>
+                </div>
+            </form>
 
-                <tr>
-                    <td class="quantity">3</td>
-                    <td class="ingredient">Kartoffeln</td>
+
+            <table id="ingredients">
+
+                <tr class="grey-line">
+                    <td class="ing-quantity" data-basis="0.25">1kg Kartoffeln</td>
                 </tr>
                 <tr>
-                    <td class="quantity">1</td>
-                    <td class="ingredient">prise Salz</td>
+                    <td class="ing-quantity">Bratbutter</td>
                 </tr>
-                <tr>
-                    <td class="quantity">10</td>
-                    <td class="ingredient">gr. Butter</td>
+                <tr class="grey-line">
+                    <td class="ing-quantity">Salz</td>
                 </tr>
-                <tr>
-                    <td class="quantity">1</td>
-                    <td class="ingredient">TL Oliven&ouml;l</td>
-                </tr>
-
+                
                 
 
             </table>
 
         </section>
 
-        <section></section>
+        <section class="preparation">
+            <h2>Zubereitung</h2>
+            <div class="description-columns description">
+                <span class="grey-box">
+                    <img src="./assets/img/icons/clock-regular.svg" alt="Uhr icon">
+                    <p> ca. 20 min</p>
+                </span>
+            </div>
+            <p>Koche die Kartoffeln</p>
+        </section>
         
-        <section></section>
+        <section class="author">
+            <h3>Rezept erstellt von</h3>
+            <figure class="profile">
+                <img class="profile-picture" src="./assets/img/profile.png" alt="Profile picture">
+                <figcaption class="profile-caption">Mischa</figcaption>
+            </figure>
+        </section>
     </main>
 
     <footer>
