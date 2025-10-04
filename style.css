@@ -274,6 +274,17 @@ footer {
 
 }
 
+@media (max-width: 610px) {
+    .description-columns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .grey-box {
+        width: 50%;
+    }
+}
+
 @media (max-width: 576px) {
     .navbar-logo {
         height: 60px;
