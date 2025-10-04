@@ -1,4 +1,4 @@
-function sendMail(event){﻿
+function sendMail(event){
     event.preventDefault();
     const data = new FormData(event.target);
 
