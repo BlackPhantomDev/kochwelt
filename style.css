@@ -1,332 +1,335 @@
-/*font ladet*/
-@font-face {
-  font-family: "Raleway", sans-serif;
-  src: url("./fonts/Raleway-Italic-VariableFont_wght.ttf");
-}
 
-@font-face {
-  font-family: "Raleway", sans-serif;
-  ;
-  src: url(./fonts/Raleway-VariableFont_wght.ttf);
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.d_none {
-  display: none;
-}
+/* This section is for general settings */
 
 * {
-  font-family: "Raleway", sans-serif;
-  margin: 0;
+    margin: 0;
+    text-decoration: none;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 80px;
-  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
-  background-color: white;
+body {
+    font-family: Raleway Regular, sans-serif;
 }
 
-header img {
-  height: 56px;
-  object-fit: contain;
-  margin-left: 32px;
+
+.mw-1440 {
+    max-width: 1440px;
 }
 
-.leftSide {
-  display: flex;
-  align-items: center;
+#unsupported-msg {
+    display: none;
 }
 
-.Navbar {
-  display: flex;
-  align-items: flex-end;
-  margin-right: 32px;
-  padding-bottom: 8px;
+/* This section is for the navbar */
+
+.navigation {
+    margin: auto;
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    position: relative;
 }
 
-.Navbar a {
-  text-decoration: none;
-  color: black;
-
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    max-width: 1440px;
+    font-size: 20px;
+    font-family: Raleway Regular;
 }
 
-.navbarList {
-  position: relative;
-  margin-left: 16px;
+
+.logo {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.links {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 20px;
+    width: 50%;
+    height: 100%;
+    margin-bottom: 20px;
 }
 
-.onPage::before {
-  content: '';
-  background-color: #009900;
-  height: 4px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: -8px;
+.nav-link {
+    font-family: Raleway Bold;
+    text-decoration: none;
+    color: black;
 }
 
-.navbarList:hover::before {
-  content: '';
-  background-color: #009900;
-  height: 4px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: -8px;
+.active-link, .nav-link:hover {
+    color: green;
+    text-decoration: underline;
+    text-underline-offset: 12px;
+    text-decoration-thickness: 4px;
 }
 
-h1 {
-  margin-top: 32px;
-  margin-bottom: 16px;
-  font-size: 32px;
+.navbar-logo {
+    max-height: 90px; 
+    width: auto;
 }
 
-main {
-  margin-right: 32px;
-  margin-left: 32px;
+.toggle-button {
+    position: absolute;
+    margin-left: 80%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 17px;
 }
 
-.mainPic {
-  background-image: url(./img/spaghetti.jpg);
-  height: 320px;
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.2);
+.bar {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
 }
 
-.basicInfo img {
-  width: 16px;
-  object-fit: cover;
+
+
+/* This section is for the Hero */
+
+.hero {
+    width: 100%;
+    height: calc(100vh - 130px - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    gap: 20px;
 }
 
-.basicInfo {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 64px;
-}
 
-.getInfo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 16px;
-  background-color: rgb(240, 240, 240);
-  border-radius: 8px;
-  margin-right: 16px;
-  margin-top: 16px;
-}
-
-.getInfo p {
-  padding-left: 8px;
-}
-
-.seperator {
-  background-color: rgb(240, 240, 240);
-  width: 100%;
-  height: 1px;
-  border-radius: 1px;
-}
-
-.RecipeFunction {
-  margin-right: 32px;
-  margin-left: 32px;
-}
-
-.RecipeInputField {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.RecipeInputField input {
-  margin-left: 16px;
-  border-width: 1px;
-  border-color: rgb(240, 240, 240);
-  border-radius: 8px 0px 0px 8px;
-  width: 160px;
-  padding-inline: 4px;
-  padding-block: 8px;
-  font-size: 14px;
-  border-width: 1px;
-}
-
-.RecipeInputField button {
-  padding-block: 8px;
-  padding-inline: 0px;
-  border-width: 0px;
-  width: 160px;
-  background-color: #009900;
-  color: white;
-  font-size: 14px;
-}
-
-.HowTo {
-  margin-top: 32px;
-  margin-right: 32px;
-  margin-left: 32px;
-}
-
-.outlineBg:nth-child(odd) {
-  display: flex;
-  justify-content: flex-start;
-  background-color: rgb(204, 204, 204);
-  padding: 16px 32px;
-  border-radius: 8px;
-  margin-bottom: 4px;
-}
-
-.outlineBg2:nth-child(even) {
-  display: flex;
-  justify-content: flex-start;
-  background-color: rgba(240, 240, 240);
-  padding: 16px 32px;
-  border-radius: 8px;
-  margin-bottom: 4px;
-}
-
-.objectsFood {
-  display: flex;
-  justify-content: flex-start;
-  align-items: start;
-}
-
-.objectsFood tbody {
-  width: 100%;
-}
-
-.Producer {
-  margin-top: 16px;
-  margin-bottom: 64px;
-  margin-left: 32px;
-  margin-right: 32px;
-}
-
-h3 {
-  margin-bottom: 16px;
-}
-
-.shortInfo {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.shortInfo img {
-  width: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.shortInfo p {
-  margin-left: 32px;
-}
+/* This section is for the footer */
 
 footer {
-  background-color: #202020;
-  padding: 64px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    width: 100%;
+    height: 200px;
+    box-shadow: 16px 0px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
-.mainLogo img {
-  height: 56px;
-  margin-left: 32px;
-  filter: brightness(0) invert(1);
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
-.socials {
-  margin-right: 32px;
+.footer-logo {
+    width: auto;
+    height: 60px;
 }
 
-/* Tabelle Design */
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
 
-li {
-  list-style-type: none;
+.footer-links a {
+    text-decoration: none;
+    color: black;
+}
+
+ 
+.contact-form, .impressum-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    background-color: rgb(228, 228, 228);
+    padding: 80px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2);
+}
+
+.impressum-text {
+    align-items: flex-start;
+}
+
+.contact-form h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.contact-form label {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 8px 12px;
+    max-width: 200px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    border: 0;
+    cursor: pointer;
+}
+
+/* This section is for the breakpoints for mobile/tablet */
+
+@media (max-width: 1700px) {
+    .navbar, .footer-content {
+        padding: 0 130px;
+    }
 }
 
 
-.socials {
-  margin-right: 32px;
+@media (max-width: 1190px) {
+
+    .navbar {
+        padding: 0;
+        width: 100%;
+        display: block;
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .logo img {
+        margin: auto;
+        max-height: 90px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .toggle-button {
+        display: flex;
+        top: 50%;               /* z. B. leicht nach unten verschieben */
+        transform: translate(-50%, -50%);
+    }
+
+    .bar1.active{rotate: 45deg; margin-top: 8px;}
+
+    .bar2.active{rotate: -45deg; margin-bottom: 8px;}
+
+    .bar{transition: all .3s ease-in-out;}
+
+    .links.active {
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: 1s ease-in-out;
+        background-color: white;
+        width: 100%;
+        height: 30vh;
+        padding: 10px 0;
+        gap: 50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    .links.active .navLink {
+        margin: auto;
+        max-height: 50px
+    }
+
+    .footer-content {
+        padding: 0 80px;
+    }
+
+    .copyright {
+        display: none;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .footer-content {
+        padding: 0 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-content {
+        max-width: 1440px;
+        gap: 30px;
+    }
+
+
 }
 
 
-#needed {
-  color: red;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 16px;
-}
+@media (max-width: 576px) {
+    .navbar-logo {
+        height: 60px;
+    }
+    footer {
+        height: auto
+    }
 
-.startToCook p {
-  margin-bottom: 16px;
-}
+    .footer-content {
+        flex-direction: column;
+        justify-content: center;
+        max-width: 1440px;
+        gap: 30px;
+        padding: 20px 0px;
+    }
 
-.startToCook li {
-  margin-bottom: 8px;
-}
+    .copyright {
+        text-align: center;
+    }
 
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
 
-.socials img {
-  height: 56px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-left: 8px;
-}
-
-.socials img:hover {
-  transform: translateY(-8px);
-  transition: all 250ms ease-in-out;
-}
-
-
-
-
-.RecipeInputField button {
-  cursor: pointer;
-}
-
-
-
-.Navbar li {
-  list-style-type: none;
+    .footer-column {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 
-/* custom scrollbar */
 
-::-webkit-scrollbar {
-  width: 16px;
-}
 
-::-webkit-scrollbar-track {
-  background-color: rgb(240, 240, 240);
 
-}
+/* This section is only for too small devices */
 
-::-webkit-scrollbar-thumb {
-  background-color: #009900;
-  border: 1px solid;
-  border-color: rgb(240, 240, 240, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+/* hide the content */
+.page-wrapper { display: none; }
+/* If device width is higher than 320px, content shows */
+@media (min-width: 321px) { .page-wrapper { display: block; } }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: #00a500;
+/* otherwise the message shows up */
+@media (max-width: 320.99px) {
+    #unsupported-msg {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background: #f8d7da;
+        color: #721c24;
+        font-family: sans-serif;
+        height: 100vh;
+    }
 }
