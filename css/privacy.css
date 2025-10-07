@@ -80,7 +80,6 @@ hr {
    Responsives Design (kleine Bildschirme)
    ------------------------------------------------- */
 @media (max-width: 768px) {
-    body { padding: 1rem; }
     h1 { font-size: 1.8rem; }
     h2 { font-size: 1.5rem; }
 }

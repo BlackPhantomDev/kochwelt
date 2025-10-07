@@ -480,9 +480,8 @@ tr {
 
     .toggle-button {
         display: flex;
-        top: 55%;
-        /* z. B. leicht nach unten verschieben */
-        transform: translate(-50%, -55%);
+        top: 50%;               /* z. B. leicht nach unten verschieben */
+        transform: translate(-50%, -50%);
     }
 
     .bar1.active {
@@ -544,17 +543,6 @@ tr {
 
 }
 
-@media (max-width: 610px) {
-    .description-columns {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .grey-box {
-        width: 50%;
-    }
-}
 
 @media (max-width: 576px) {
     .navbar-logo {
@@ -610,7 +598,7 @@ tr {
 }
 
 /* otherwise the message shows up */
-@media (max-width: 320px) {
+@media (max-width: 320.99px) {
     #unsupported-msg {
         display: flex;
         flex-direction: column;
