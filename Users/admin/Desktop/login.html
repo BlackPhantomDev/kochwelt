@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - AutoLackierung Pro</title>
+  <style>
+    /* Allgemeines Styling */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    /* Animierte Hintergrund-Elemente */
+    body::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: float 20s infinite linear;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(-50px, -50px) rotate(360deg); }
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 
+        0 15px 35px rgba(0,0,0,0.3),
+        0 5px 15px rgba(0,0,0,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      animation: slideIn 0.8s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      margin-bottom: 25px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      filter: brightness(0) invert(1);
+    }
+
+    .login-container h1 {
+      margin-bottom: 10px;
+      font-size: clamp(24px, 5vw, 32px);
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, #fff, #e0e0e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .login-container p {
+      font-size: clamp(14px, 3vw, 16px);
+      margin-bottom: 35px;
+      color: rgba(255,255,255,0.8);
+      font-weight: 300;
+    }
+
+    .input-group {
+      margin-bottom: 25px;
+      text-align: left;
+      position: relative;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: clamp(12px, 2.5vw, 14px);
+      margin-bottom: 8px;
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: clamp(14px, 3vw, 16px);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .input-group input::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .input-group input:focus {
+      background: rgba(255, 255, 255, 0.25);
+      outline: none;
+      border-color: rgba(255,255,255,0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: clamp(14px, 3vw, 16px);
+      font-weight: 600;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .login-btn:hover::before {
+      left: 100%;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, #ff5252, #26c6da);
+    }
+
+    .login-btn:active {
+      transform: translateY(-1px);
+    }
+
+    .extra-links {
+      margin-top: 30px;
+      font-size: clamp(12px, 2.5vw, 14px);
+    }
+
+    .extra-links p {
+      margin: 10px 0;
+    }
+
+    .extra-links a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 500;
+    }
+
+    .extra-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 50%;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .extra-links a:hover::after {
+      width: 100%;
+    }
+
+    .extra-links a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    /* Zusätzliche Glanz-Effekte */
+    .login-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    }
+
+    .login-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    /* Responsive Breakpoints - Aktuelle Standards 2024 */
+    
+    /* Extra Small Devices (Phones, 320px - 575px) */
+    @media (max-width: 575.98px) {
+      body {
+        padding: 15px;
+      }
+      
+      .login-container {
+        padding: 30px 25px;
+        border-radius: 15px;
+        min-height: auto;
+      }
+      
+      .logo {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+      }
+      
+      .logo img {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .input-group {
+        margin-bottom: 20px;
+      }
+      
+      .input-group input {
+        padding: 12px 15px;
+      }
+      
+      .login-btn {
+        padding: 14px;
+        letter-spacing: 0.5px;
+      }
+      
+      .extra-links {
+        margin-top: 25px;
+      }
+      
+      /* Reduzierte Animationen für bessere Performance */
+      body::before {
+        animation-duration: 30s;
+      }
+    }
+
+    /* Small Devices (Landscape Phones, 576px - 767px) */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      .login-container {
+        padding: 40px 35px;
+        max-width: 450px;
+      }
+      
+      .logo {
+        width: 80px;
+        height: 80px;
+      }
+      
+      .logo img {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    /* Medium Devices (Tablets, 768px - 991px) */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      .login-container {
+        padding: 45px 40px;
+        max-width: 500px;
+      }
+    }
+
+    /* Large Devices (Desktops, 992px - 1199px) */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      .login-container {
+        max-width: 450px;
+      }
+    }
+
+    /* Extra Large Devices (Large Desktops, 1200px - 1399px) */
+    @media (min-width: 1200px) and (max-width: 1399.98px) {
+      .login-container {
+        max-width: 400px;
+      }
+    }
+
+    /* XXL Devices (Larger Desktops, 1400px and up) */
+    @media (min-width: 1400px) {
+      .login-container {
+        max-width: 420px;
+        padding: 60px 45px;
+      }
+      
+      .logo {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .logo img {
+        width: 55px;
+        height: 55px;
+      }
+    }
+
+    /* Landscape Orientation für Mobile */
+    @media (max-height: 600px) and (orientation: landscape) {
+      body {
+        padding: 10px;
+        align-items: flex-start;
+        padding-top: 20px;
+      }
+      
+      .login-container {
+        padding: 25px 30px;
+        margin: 10px 0;
+      }
+      
+      .logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+      }
+      
+      .logo img {
+        width: 35px;
+        height: 35px;
+      }
+      
+      .login-container p {
+        margin-bottom: 20px;
+      }
+      
+      .input-group {
+        margin-bottom: 15px;
+      }
+      
+      .extra-links {
+        margin-top: 20px;
+      }
+      
+      /* Deaktiviere Animationen im Landscape-Modus für bessere UX */
+      .logo {
+        animation: none;
+      }
+      
+      body::before {
+        display: none;
+      }
+    }
+
+    /* High DPI Displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .login-container {
+        backdrop-filter: blur(20px);
+      }
+    }
+
+    /* Reduced Motion für Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      body::before {
+        animation: none;
+      }
+      
+      .logo {
+        animation: none;
+      }
+    }
+
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark) {
+      .login-container {
+        background: rgba(0, 0, 0, 0.2);
+        border-color: rgba(255,255,255,0.1);
+      }
+    }
+
+    /* Touch Devices - Größere Touch-Targets */
+    @media (pointer: coarse) {
+      .login-btn {
+        padding: 18px;
+        min-height: 48px;
+      }
+      
+      .input-group input {
+        padding: 16px 20px;
+        min-height: 48px;
+      }
+      
+      .extra-links a {
+        padding: 8px 4px;
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Logo">
+    </div>
+    <h1>AutoLackierung Pro</h1>
+    <p>Bitte melde dich mit deinen Zugangsdaten an</p>
+    <form>
+      <div class="input-group">
+        <label for="username">Benutzername</label>
+        <input type="text" id="username" name="username" placeholder="E-Mail oder Benutzername" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Passwort</label>
+        <input type="password" id="password" name="password" placeholder="Passwort" required>
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <div class="extra-links">
+      <p><a href="#">Passwort vergessen?</a></p>
+      <p>Noch keinen Zugang? <a href="#">Registrieren</a></p>
+    </div>
+  </div>
+</body>
+</html>
