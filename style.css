@@ -360,10 +360,10 @@ footer {
 }
 
 .infotext-recipe {
-    background-color: #e9e7e7;
+    background-color: rgb(241, 241, 241);
     border-radius: 5px;
-    padding: 0 8px ;
-    margin-bottom: 20px;
+    padding: 0 8px;
+    margin-bottom: 24px;
     height: 30px;
     display: flex;
     align-items: center;
@@ -379,8 +379,7 @@ footer {
 
 .cook-info {
     display: flex;
-    gap: 25px;
-    margin-top: 25px;
+    gap: 10px;
 
 }
 
@@ -430,8 +429,7 @@ footer {
 }
 
 .tr-design-color {
-    background-color: #e9e7e7;
-
+    background-color: rgb(241, 241, 241);
 }
 
 tr {
@@ -440,7 +438,7 @@ tr {
 
 #ingredients {
     width: 100%;
-    
+
 }
 
 
@@ -452,7 +450,7 @@ tr {
 .recipe-from {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 35px;
 }
 
 @media (max-width: 1190px) {

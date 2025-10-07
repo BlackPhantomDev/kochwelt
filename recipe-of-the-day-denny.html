@@ -5,97 +5,159 @@
     <title>Kochwelt</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./css/fonts.css">
-     <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
+<style>
+     @media (max-width: 992px) {
+        .main-recipe, .recipes, .fun-fact-container {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        .fun-fact-caption {
+            width: 50%;
+        }
+        /* .column-img img, .fun-fact-img img {
+            width: 160px;
+        } */
+    }
 
-<body><div class="page-wrapper">
-    <header class="navigation">
-        <nav>
-            <div class="logo">
-                <img class='img-header' src="./assets/img/logo.png" alt="Bild Kochwelt">
-            </div>
-            <div class="links">
-                <a class="nav-link active-link" href="#">Start</a>
-                <a class="nav-link" href="./recipe-of-the-day-denny.html">Rezept des Tages</a>
-                <a class="nav-link" href="#">Kontakt</a>
-                <a class="nav-link" href="#">Impressum</a>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section class="fr-croissant">
-            <figure class="figure-fr-croissant">
-                <img class="img-croissant" src="./assets/img/croissant.jpg" alt="pic.croissant">
-                <figcaption>
-                    <h2 class="h2-croissants h2">
-                        Französische Croissants
-                    </h2>
-                    <p class="text-croissant text">
-                        Schmackhafte Croissants können auch zu Hause sehr einfach gebacken
-                        werden. Mit ca.30 Minuten Aufwand kannst du ein wundervolles Frühstück zaubern.
-                    </p>
+    @media (max-width: 767px) {
+        .main-recipe, .recipes, .fun-fact-container {
+            height: auto;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        .main-recipe, .recipes-columns, .fun-fact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding-top: 30px;
+        }
 
-                    <div class="button-croissant">
-                        <a class="button-open-recipe" href="#">Rezept öffnen</a>
-                    </div>
-                </figcaption>
-            </figure>
-        </section>
+        .main-recipe-img, .main-recipe-img-caption {
+            width: 100%;
+            gap: 20px;
+        }
 
-        <section class="smth-new">
-            <div class="container-smt-new">
-                <h2 class="h2-smth-new h2">Lust auf was Neues?</h2>
-                <div class="menus-smth-new">
-                    <div class="recipes">
-                        <img class="img-small" src="./assets/img/croissant.jpg" alt="pic.croissant">
-                        <span class="text">Frische Croissants</span>
-                    </div>
-                    <div class="recipes">
-                        <img class="img-small" src="./assets/img/croissant.jpg" alt="pic.croissant">
-                        <span class="text">Frische Croissants</span>
-                    </div>
-                    <div class="recipes">
-                        <img class="img-small" src="./assets/img/croissant.jpg" alt="pic.croissant">
-                        <span class="text">Frische Croissants</span>
+        .column-img, .fun-fact-img {
+            display: flex;
+            justify-content: center;
+        }
+        .column-img img, .fun-fact-img img {
+            width: 70%;
+        }
+
+        .fun-fact-caption {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .main-recipe, .recipes, .fun-fact-container {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+    }
+</style>
+
+<body>
+    <div class="page-wrapper">
+        <header class="navigation">
+            <a onclick="openMenu()" href="#" class="toggle-button">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+            </a>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
+                </div>
+                <div class="links">
+                    <a class="nav-link" href="index.html">Start</a>
+                    <a class="nav-link" href="#">Rezept des Tages</a>
+                    <a class="nav-link" href="contact.html">Kontakt</a>
+                    <a class="nav-link" href="impressum.html">Impressum</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="fr-croissant main-recipe">
+                <figure class="figure-fr-croissant main-recipe-img ">
+                    <img class="img-croissant" src="./assets/img/croissant.jpg" alt="pic.croissant">
+                    <figcaption class="main-recipe-img-caption">
+                        <h2 class="h2-croissants h2">
+                            Französische Croissants
+                        </h2>
+                        <p class="text-croissant text">
+                            Schmackhafte Croissants können auch zu Hause sehr einfach gebacken
+                            werden. Mit ca.30 Minuten Aufwand kannst du ein wundervolles Frühstück zaubern.
+                        </p>
+
+                        <div class="button-croissant">
+                            <a class="button-open-recipe" href="#">Rezept öffnen</a>
+                        </div>
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section class="smth-new">
+                <div class="container-smt-new">
+                    <h2 class="h2-smth-new h2">Lust auf was Neues?</h2>
+                    <div class="menus-smth-new">
+                        <div class="recipes">
+                            <img class="img-small" src="./assets/img/croissant.jpg" alt="pic.croissant">
+                            <span class="text">Frische Croissants</span>
+                        </div>
+                        <div class="recipes">
+                            <img class="img-small" src="./assets/img/croissant.jpg" alt="pic.croissant">
+                            <span class="text">Frische Croissants</span>
+                        </div>
+                        <div class="recipes">
+                            <img class="img-small" src="./assets/img/croissant.jpg" alt="pic.croissant">
+                            <span class="text">Frische Croissants</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="pan-vs-wok">
-            <h2 class="h2 h2-pan-vs-wok">Pfanne vs. Wok- Was ist besser?</h2>
-            <figure class="figure-pan-vs-wok">
-                <img class="img-small" src="./assets/img/wok.jpg" alt="img.wok">
-                <figcaption>
-                    <span class="text">
-                        Weder Wok noch Pfanne ist grundsätzlich besser. Die Wahl hängt vom Gericht ab. Eine Pfanne ist
-                        besser für gleichmäßige Hitze,
-                        das Anbraten größerer Stücke wie Steaks oder für das Garen bei niedrigeren Temperaturen. Ein Wok
-                        ist ideal für das schnelle,
-                        heiße Pfannenrühren von Reisgerichten oder Gemüse, da er dank seiner Trichterform eine sehr hohe
-                        Hitze im Zentrum und kühlere Zonen am Rand bietet.
-                    </span>
-                </figcaption>
-            </figure>
-        </section>
-    </main>
+            <section class="pan-vs-wok">
+                <h2 class="h2 h2-pan-vs-wok">Pfanne vs. Wok- Was ist besser?</h2>
+                <figure class="figure-pan-vs-wok">
+                    <img class="img-small" src="./assets/img/wok.jpg" alt="img.wok">
+                    <figcaption>
+                        <span class="text">
+                            Weder Wok noch Pfanne ist grundsätzlich besser. Die Wahl hängt vom Gericht ab. Eine Pfanne
+                            ist
+                            besser für gleichmäßige Hitze,
+                            das Anbraten größerer Stücke wie Steaks oder für das Garen bei niedrigeren Temperaturen. Ein
+                            Wok
+                            ist ideal für das schnelle,
+                            heiße Pfannenrühren von Reisgerichten oder Gemüse, da er dank seiner Trichterform eine sehr
+                            hohe
+                            Hitze im Zentrum und kühlere Zonen am Rand bietet.
+                        </span>
+                    </figcaption>
+                </figure>
+            </section>
+        </main>
 
-  <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <img class="footer-logo" src="./assets/img/logo_small.png" alt="Logo">
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img class="footer-logo" src="./assets/img/logo_small.png" alt="Logo">
+                </div>
+                <div class="copyright footer-column">
+                    <p>© 2025 Mischa Siegrist, Secan Akbulut, Denny Hartmann</p>
+                </div>
+                <div class="footer-links footer-column">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="privacy.html">Datenschutzerkl&auml;rung</a>
+                </div>
             </div>
-            <div class="copyright footer-column">
-                <p>© 2025 Mischa Siegrist, Secan Akbulut, Denny Hartmann</p>
-            </div>
-            <div class="footer-links footer-column">
-                <a href="impressum.html">Impressum</a>
-                <a href="privacy.html">Datenschutzerkl&auml;rung</a>
-            </div>
-        </div>
-    </footer>
-</div>
+        </footer>
+    </div>
     <div id="unsupported-msg" class="hidden">
         <h2>Die Größe Ihres Bildschirms wird nicht unterstützt</h2>
         <p>Bitte nutzen Sie ein Gerät mit einer größeren Auflösung.</p>
