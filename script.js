@@ -40,10 +40,11 @@ function calcIng() {
 }
 
 
-let input = document.getElementById('portions');
+let factorInput = document.getElementById('portions');
 
-input.addEventListener("keydown", function(event) {
-    let val = parseInt(input.value);
+if (factorInput != null) {
+factorInput.addEventListener("keydown", function(event) {
+    let val = parseInt(factorInput.value);
   // Erlaubte Steuerungstasten
     const allowedKeys = [
         "Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
@@ -66,14 +67,14 @@ input.addEventListener("keydown", function(event) {
   }
 
   // Cursor-Position ermitteln
-  const start = input.selectionStart;
-  const end = input.selectionEnd;
+  const start = factorInput.selectionStart;
+  const end = factorInput.selectionEnd;
 
   // neuen Wert "simulieren", falls die Taste angenommen würde
   let newValue = 
-    input.value.substring(0, start) + 
+    factorInput.value.substring(0, start) + 
     event.key + 
-    input.value.substring(end);
+    factorInput.value.substring(end);
 
   // Zahl daraus machen
   let number = parseInt(newValue);
@@ -86,18 +87,20 @@ input.addEventListener("keydown", function(event) {
 
 
 
-input.addEventListener("input", function() {
-  let val = parseInt(input.value);
+factorInput.addEventListener("factorInput", function() {
+  let val = parseInt(factorInput.value);
 
   if (isNaN(val)) {
     return; // leere Eingabe erlauben
   }
 
   if (val < 1) {
-    input.value = 1;
+    factorInput.value = 1;
   }
 
   if (val > 20) {
-    input.value = 20;
+    factorInput.value = 20;
   }
 });
+}
+
