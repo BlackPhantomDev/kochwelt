@@ -1,150 +1,56 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="./img/logo_small.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochwelt</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
-
-    <title>Kochwelt</title>
 </head>
-
 <body>
-    <header>
-        <div class="leftSide">
-            <img src="./img/logo.png" alt="LOGO" />
-        </div>
-
-        <div class="Navbar">
-            <li class="navbarList"><a href="#">Start</a></li>
-            <li class="navbarList onPage"><a href="#">Rezept des Tages</a></li>
-            <li class="navbarList"><a href="#">Kontakt</a></li>
-            <li class="navbarList"><a href="#">Impressum</a></li>
-        </div>
+<div class="page-wrapper">
+    <header class="navigation">
+        <a onclick="openMenu()" href="#" class="toggle-button" >
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+        </a>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
+            </div>
+            <div class="links">
+                <a class="nav-link active-link" href="#">Start</a>
+                <a class="nav-link" href="recipe-of-the-day-mischa.html">Rezept des Tages</a>
+                <a class="nav-link" href="contact.html">Kontakt</a>
+                <a class="nav-link" href="impressum.html">Impressum</a>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <h1>Originaler Hamburger Döner</h1>
-
-        <div class="mainPic"></div>
-
-        <div class="basicInfo">
-            <div class="getInfo">
-                <img src="./img/icons/clock-regular.svg" alt="CLOCK" />
-                <p>30 Min.</p>
-            </div>
-
-            <div class="getInfo">
-                <img src="./img/icons/brain-solid.svg" alt="BRAIN" />
-                <p>mittel</p>
-            </div>
-
-            <div class="getInfo">
-                <img src="./img/icons/calendar-alt-regular.svg" alt="CALENDAR" />
-                <p>29.09.2025</p>
-            </div>
-        </div>
-
-        <div class="seperator"></div>
+    <main class="hero">
+        <h1>Startseite</h1>
     </main>
 
-    <div class="RecipeFunction">
-        <div class="RecipeInputField">
-            <p>Zutaten für</p>
-            <input id="valuePortion" name="valuePortion" type="number" placeholder="Wähle die Menge..." min="1"
-                max="20" />
-            <button onclick="AddPortion()">Portionen</button>
-        </div>
-
-        <div id="needed"></div>
-
-        <div id="recipe1">
-            <div class="outlineBg">1 Fladenbrot</div>
-            <div class="outlineBg2">150 g Hähnchen- oder Kalbfleisch (mariniert)</div>
-            <div class="outlineBg">1 kleine Zwiebel</div>
-            <div class="outlineBg2">1 Tomate</div>
-            <div class="outlineBg">¼ Gurke</div>
-            <div class="outlineBg2">Eisbergsalat, fein geschnitten</div>
-            <div class="outlineBg">Knoblauchsauce</div>
-            <div class="outlineBg2">Joghurtsauce oder Kräutersauce</div>
-            <div class="outlineBg">etwas Salz und Pfeffer</div>
-        </div>
-    </div>
-
-    <div class="HowTo">
-        <h2>Zubereitung</h2>
-
-        <div class="basicInfo">
-            <div class="getInfo">
-                <img src="./img/icons/clock-regular.svg" alt="CLOCK" />
-                <p>Vorbereitung ca. 15 Min.</p>
-            </div>
-
-            <div class="getInfo">
-                <img src="./img/icons/clock-regular.svg" alt="CLOCK" />
-                <p>Gesamtzeit ca. 30 Min.</p>
-            </div>
-        </div>
-
-        <div class="startToCook">
-            <p>1. <b>Fleisch anbraten:</b></p>
-            <ul>
-                <li>Das marinierte Fleisch in einer Pfanne mit etwas Öl scharf anbraten, bis es goldbraun und
-                    durchgegart ist.
-                </li>
-            </ul>
-
-            <p>2. <b>Gemüse vorbereiten:</b></p>
-            <ul>
-                <li>Zwiebel schälen und in feine Ringe schneiden.</li>
-                <li>Tomate und Gurke in dünne Scheiben schneiden.</li>
-                <li>Eisbergsalat waschen und fein hobeln.</li>
-            </ul>
-
-            <p>3. <b>Fladenbrot vorbereiten:</b></p>
-            <ul>
-                <li>Das Fladenbrot kurz im Ofen oder Toaster erwärmen, damit es außen knusprig und innen weich wird.
-                </li>
-                <li>Anschließend einschneiden, aber nicht komplett durchschneiden.</li>
-            </ul>
-
-            <p>4. <b>Döner füllen:</b></p>
-            <ul>
-                <li>Das Brot mit Knoblauch- und Joghurtsauce bestreichen.</li>
-                <li>Fleisch hineingeben und mit Salat, Tomaten, Gurken und Zwiebeln schichten.</li>
-            </ul>
-
-            <p>5. <b>Servieren:</b></p>
-            <ul>
-                <li>Den Döner sofort heiß genießen – typisch wie in Hamburg an der Dönerbude!</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="Producer">
-        <h3>Rezept erstellt von</h3>
-        <div class="shortInfo">
-            <img src="#" alt="PROFILE" />
-            <p>Secan Akbulut</p>
-        </div>
-    </div>
-
     <footer>
-        <div class="mainLogo">
-            <a href="#"><img src="./img/logo.png" alt="LOGO" /></a>
-        </div>
-
-        <div class="socials">
-            <a href="https://www.facebook.com/developer.akademie/" target="_blank"><img src="./img/fb.png"
-                    alt="FACEBOOK" /></a>
-            <a href="https://www.instagram.com/developer.akademie/?hl=de" target="_blank"><img src="./img/ig.png"
-                    alt="INSTAGRAM" /></a>
-            <a href="https://developerakademie.com/" target="_blank"><img src="./img/twit.png" alt="TWITTER" /></a>
+        <div class="footer-content">
+            <div class="footer-column">
+                <img class="footer-logo" src="./assets/img/logo_small.png" alt="Logo">
+            </div>
+            <div class="copyright footer-column">
+                <p>© 2025<br> Mischa Siegrist, Secan Akbulut, Denny Hartmann</p>
+            </div>
+            <div class="footer-links footer-column">
+                <a href="impressum.html">Impressum</a>
+                <a href="privacy.html">Datenschutzerkl&auml;rung</a>
+            </div>
         </div>
     </footer>
+</div>
+    <div id="unsupported-msg" class="hidden">
+        <h2>Die Größe Ihres Bildschirms wird nicht unterstützt</h2>
+        <p>Bitte nutzen Sie ein Gerät mit einer größeren Auflösung.</p>
+    </div>
+    <script src="./script.js"></script>
 </body>
-
 </html>
