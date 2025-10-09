@@ -99,7 +99,6 @@ body {
 /* This section is for the Hero */
 
 .hero {
-    width: 100%;
     height: calc(100vh - 130px - 200px);
     display: flex;
     flex-direction: column;
@@ -187,7 +186,7 @@ footer {
 /* This section is for the breakpoints for mobile/tablet */
 
 @media (max-width: 1700px) {
-    .navbar, .footer-content {
+    .navbar, .footer-content, .hero {
         padding: 0 130px;
     }
 }
@@ -307,8 +306,20 @@ footer {
         justify-content: center;
         align-items: center;
     }
-}
 
+    .impressum-text {
+        padding: 60px;
+    }
+
+    .impressum-text h1 {
+        font-size: 24px;
+    }
+    .impressum-text h2 {
+        font-size: 20px;
+    }
+    
+}
+    
 
 
 
