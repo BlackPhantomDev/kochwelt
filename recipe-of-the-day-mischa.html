@@ -102,6 +102,13 @@
         object-fit: cover;
         border-radius: 7px;
     }
+
+    .column-img {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .column-caption {
         text-align: center;
         font-family: Raleway Bold;
@@ -173,19 +180,19 @@
 
         /* Bild */
         .croissant-img {
-            flex: 1 1;      /* wächst, schrumpft, Mindestbreite 300px */
-            max-width: 100%;      /* verhindert, dass das Bild breiter als sein Container wird */
+            flex: 1 1; 
+            max-width: 100%;  
             object-fit: cover;
             border-radius: 15px;
         }
 
         /* Caption */
         .main-recipe-caption {
-            flex: 1 1;      /* gleiche Flex‑Regeln wie beim Bild */
+            flex: 1 1;   
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* vertikaler Abstand zwischen Text & Button */
-            min-width: 0;         /* wichtig, damit Text nicht überläuft */
+            justify-content: space-between; 
+            min-width: 0; 
             gap: 30px;
         }
             
@@ -214,13 +221,9 @@
             margin-bottom: 0;
         }
 
-
         .column-img, .fun-fact-img {
             display: flex;
             justify-content: center;
-        }
-        .column-img img, .fun-fact-img img {
-            width: 70%;
         }
 
         .fun-fact-caption {
@@ -235,6 +238,16 @@
         }
     }
 
+    @media (max-width: 500px) {
+        .main-recipe-description h3, h3 {
+            font-size: 22px;
+        }
+    }
+    @media (max-width: 400px) {
+        .main-recipe-description h3, h3 {
+            font-size: 20px;
+        }
+    }
 
 </style>
 <body>
@@ -286,30 +299,30 @@
                         <a href="#">
                             <figure class="column-img">
                                 <img src="./assets/img/salad.jpg" alt="">
+                                <figcaption class="column-caption">
+                                    Salat
+                                </figcaption>
                             </figure>
-                            <figcaption class="column-caption">
-                                Salat
-                            </figcaption>
                         </a>
                     </div>
                     <div class="column">
                         <a href="./roesti.html">
                             <figure class="column-img">
                                 <img src="./assets/img/roesti.jpg" alt="">
+                                <figcaption class="column-caption">
+                                    R&ouml;sti
+                                </figcaption>
                             </figure>
-                            <figcaption class="column-caption">
-                                R&ouml;sti
-                            </figcaption>
                         </a>
                     </div>
                     <div class="column">
                         <a href="#">
                             <figure class="column-img">
                                 <img src="./assets/img/salad.jpg" alt="">
+                                <figcaption class="column-caption">
+                                    Salat
+                                </figcaption>
                             </figure>
-                            <figcaption class="column-caption">
-                                Salat
-                            </figcaption>
                         </a>
                     </div>
                 </div>
@@ -321,7 +334,12 @@
                 <h3>Pfanne vs. Wok - Was ist besser?</h3>
                 <div class="fun-fact">
                     <figcaption class="fun-fact-caption">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente libero nisi odit suscipit perspiciatis beatae similique assumenda. Quae minima culpa expedita distinctio obcaecati voluptas vero! Quis cupiditate temporibus voluptas illum.</p>
+                        <p>
+                            Weder Wok noch Pfanne ist grundsätzlich besser. Die Wahl hängt vom Gericht ab. 
+                            Eine Pfanne ist besser für gleichmäßige Hitze, das Anbraten größerer Stücke wie Steaks oder für das Garen bei niedrigeren Temperaturen. 
+                            Ein Wok ist ideal für das schnelle, heiße Pfannenrühren von Reisgerichten oder Gemüse, da er dank seiner 
+                            Trichterform eine sehr hohe Hitze im Zentrum und kühlere Zonen am Rand bietet.
+                        </p>    
                     </figcaption>
                     <figure class="fun-fact-img">
                         <img src="./assets/img/wok.jpg" alt="">
