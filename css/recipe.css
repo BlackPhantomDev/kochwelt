@@ -1,6 +1,6 @@
 /* Recipe of the Day Page */
 
-.recipes, .fun-fact-container {
+.main-recipe, .recipes, .fun-fact-container {
     display: flex;
     margin: auto;
     height: 400px;
@@ -17,19 +17,20 @@
     display: flex;
     justify-content: center;
     margin: auto;
+    height: 500px;
 }
 
 .main-recipe-content {
     display: flex;
     align-items: stretch;
     gap: 30px;
-    padding: 50px 130px;
+    padding: 50px 0;
 }
 
 /* Bild */
 .croissant-img {
-    flex: 1 1; 
-    max-width: 50%;      
+    width: 100%;
+    max-width: 60%;      
     object-fit: cover;
     border-radius: 15px;
 }
@@ -125,7 +126,7 @@ h3 {
 
 /* Recipe Page */
 
-.recipe-main {
+.recipe-main-container {
     padding: 0 130px;
     display: flex;
     flex-direction: column;
@@ -280,16 +281,19 @@ td {
 }
 
 /* Recipe of the Day */
+
+@media (max-width: 1700px) {
+    .main-recipe{
+        padding: 0 130px;
+    }
+}
 @media (max-width: 992px) {
-    .recipes, .fun-fact-container {
+    .main-recipe, .recipes, .fun-fact-container {
         padding-left: 100px;
         padding-right: 100px;
     }
     .fun-fact-caption {
         width: 50%;
-    }
-    .main-recipe-content {
-        padding: 50px 100px;
     }
     .main-recipe-btn {
         margin-bottom: 0;
@@ -308,7 +312,7 @@ td {
 
 @media (max-width: 767px) {
     /* Recipe of the Day */
-    .recipes, .fun-fact-container {
+    .main-recipe, .recipes, .fun-fact-container {
         height: auto;
         padding-left: 80px;
         padding-right: 80px;
@@ -327,7 +331,6 @@ td {
         flex-direction: column;
         align-items: stretch;
         gap: 30px;
-        padding: 40px 80px;
     }
 
     /* Bild */
@@ -383,20 +386,20 @@ td {
     }
 
     /* Recipe */
-    .recipe-main {
+    .recipe-main-container {
         padding: 0 80px;
     }
 }
 
 @media (max-width: 576px) {
     /* Recipe of the Day */
-        .recipes, .fun-fact-container {
+    .main-recipe, .recipes, .fun-fact-container {
         padding-left: 60px;
         padding-right: 60px;
     }
 
     /* Recipe */
-    .recipe-main {
+    .recipe-main-container {
         padding: 0 60px;
     }
     .calculation-mobile {
