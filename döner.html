@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochwelt</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+
+    <style>
+        main {
+            padding: 0 130px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+        }
+
+        .recipe-header {
+            padding-top: 64px;
+            width: 100%;
+        }
+
+        .recipe-header-img {
+            width: 100%;
+            padding: 20px 0;
+        }
+        .recipe-header-img img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .description-columns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-description { padding-bottom: 72px;}
+        .description { padding-bottom: 24px;}
+
+        .grey-box {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(241, 241, 241);
+            padding: 6px 8px;
+            border-radius: 10px;
+            gap: 10px;
+        }
+
+        .grey-box img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .seperator {
+            width: 100%;
+            height: 2px;
+            background-color: rgb(241, 241, 241);
+        }
+
+        .recipe-ingredients {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 48px;
+        }
+
+        .calculation {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 0;
+        }
+        .calculation-mobile {
+            display: flex;
+            width: 50%;
+        }
+        .calculation label {
+            padding-right: 10px;
+        }
+
+        #portions {
+            width: 100%;  
+            max-width: 200px;
+            height: 41px;
+            padding: 0 8px;
+            box-sizing: border-box;
+            display: block;
+            border-radius: 5px 0 0 5px;
+            border: 1px solid black;
+        }
+
+        #portions-btn {
+            padding: 0 16px;
+            height: 41px;
+            line-height: 41px;
+            border: none;
+            background: rgb(0,160,0);
+            color: #fff;
+            cursor: pointer;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .grey-line {
+            background-color: rgb(241, 241, 241);
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            text-align: left;
+            padding: 14px 24px;
+            border-radius: 10px;
+        }
+
+        .preparation {
+            width: 100%;
+            padding-bottom: 48px;
+        }
+        .preparation h2 {
+            padding-bottom: 24px;
+        }
+        .description-text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .author {
+            width: 100%;
+            padding-bottom: 48px;
+        }
+
+        .author h3 {
+            padding-bottom: 24px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .profile-picture {
+            width: 72px;
+            border-radius: 50%;
+        }
+        .profile-caption {
+            font-family: Raleway Light;
+            font-size: 24px;
+        }
+
+        @media (max-width: 767px) {
+            main {
+                padding: 0 80px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            main {
+                padding: 0 60px;
+            }
+            .calculation-mobile {
+                display: flex;
+                max-width: 80%;
+                width: 100%;
+                align-items: center;
+                box-sizing: border-box;
+            }
+            .calculation {
+                flex-direction: column;
+            }
+            .grey-box {
+                width: 50%;
+            }
+            .description-columns {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 470px) {
+            .description-columns {
+                display: flex;
+            }
+            .grey-box {
+                width: 70%;
+            }
+            .grey-box p {
+                font-size: 14px;
+            }
+           .calculation-mobile {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 24px;
+            }
+            .calculation {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .profile-picture {width: 64px;}
+            .profile-caption {font-size: 20px;}
+        }
+    </style>
+</head>
+
+<body onload="calcIng()">
+<div class="page-wrapper">
+    <header class="navigation">
+        <a onclick="openMenu()" href="#" class="toggle-button" >
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+        </a>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
+            </div>
+            <div class="links">
+                <a class="nav-link" href="./index.html">Start</a>
+                <a class="nav-link active-link" href="recipe-of-the-day-secan.html">Rezept des Tages</a>
+                <a class="nav-link" href="contact.html">Kontakt</a>
+                <a class="nav-link" href="impressum.html">Impressum</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mw-1440">
+        <section class="recipe-header">
+            <h1>Hamburger Döner</h1>
+            <div class="recipe-header-img">
+                <img src="./assets/img/doener.jpg" alt="Hamburger Döner">
+            </div>
+            <div class="description-columns header-description">
+                <span class="grey-box">
+                    <img src="./assets/img/icons/clock-regular.svg" alt="Uhr icon">
+                    <p>45 min</p>
+                </span>
+                <span class="grey-box">
+                    <img src="./assets/img/icons/brain-solid.svg" alt="Schwierigkeits icon">
+                    <p>Simpel</p>
+                </span>
+                <span class="grey-box">
+                    <img src="./assets/img/icons/calendar-alt-regular.svg" alt="Kalender icon">
+                    <p>03.10.2025</p>
+                </span>
+            </div>
+        </section>
+
+        <div class="seperator"></div>
+
+        <section class="recipe-ingredients">
+            <form class="calculation">
+                <p>Zutaten für:</p>
+                <div class="calculation-mobile">
+                    <input id="portions" type="number" min="1" max="20" value="4">
+                    <button id="portions-btn" type="button" onclick="calcIng()">Portion(en)</button>
+                </div>
+            </form>
+
+            <table id="ingredients">
+                <tr class="grey-line">
+                    <td class="ing-quantity" data-basis="1">1 Fladenbrot</td>
+                </tr>
+                <tr>
+                    <td class="ing-quantity" data-basis="150">150 g Hähnchen- oder Kalbfleisch (mariniert)</td>
+                </tr>
+                <tr class="grey-line">
+                    <td class="ing-quantity" data-basis="1">1 kleine Zwiebel</td>
+                </tr>
+                <tr>
+                    <td class="ing-quantity" data-basis="1">1 Tomate</td>
+                </tr>
+                <tr class="grey-line">
+                    <td class="ing-quantity" data-basis="0.25">¼ Gurke</td>
+                </tr>
+                <tr>
+                    <td class="ing-quantity" data-basis="50">50 g Eisbergsalat, fein geschnitten</td>
+                </tr>
+                <tr class="grey-line">
+                    <td class="ing-quantity" data-basis="2">2 EL Knoblauchsauce</td>
+                </tr>
+                <tr>
+                    <td class="ing-quantity" data-basis="2">2 EL Joghurtsauce oder Kräutersauce</td>
+                </tr>
+                <tr class="grey-line">
+                    <td class="ing-quantity" data-basis="1">etwas Salz und Pfeffer</td>
+                </tr>
+            </table>
+        </section>
+        
+        <section class="preparation">
+            <h2>Zubereitung</h2>
+            <div class="description-columns description">
+                <span class="grey-box">
+                    <img src="./assets/img/icons/clock-regular.svg" alt="Uhr icon">
+                    <p>ca. 30 min</p>
+                </span>
+            </div>
+            <div class="description-text">
+                <p><strong>1. Fleisch anbraten:</strong> Das marinierte Fleisch in einer Pfanne mit etwas Öl scharf anbraten, bis es goldbraun und durchgegart ist.</p>
+                <p><strong>2. Gemüse vorbereiten:</strong> Zwiebel schälen und in feine Ringe schneiden. Tomate und Gurke in Scheiben schneiden. Eisbergsalat fein hobeln.</p>
+                <p><strong>3. Fladenbrot erwärmen:</strong> Das Fladenbrot kurz im Ofen oder Toaster erwärmen, bis es außen knusprig und innen weich ist. Anschließend einschneiden, aber nicht ganz durch.</p>
+                <p><strong>4. Döner zusammenstellen:</strong> Brot mit Knoblauch- und Joghurtsauce bestreichen, Fleisch hineingeben, danach Salat, Tomaten, Gurken und Zwiebeln schichten.</p>
+                <p><strong>5. Servieren:</strong> Döner heiß servieren – wie beim besten Imbiss in Hamburg!</p>
+            </div>
+        </section>
+        
+        <section class="author">
+            <h3>Rezept erstellt von</h3>
+            <figure class="profile">
+                <img class="profile-picture" src="./assets/img/profile.png" alt="Profile picture">
+                <figcaption class="profile-caption">Secan</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <img class="footer-logo" src="./assets/img/logo_small.png" alt="Logo">
+            </div>
+            <div class="copyright footer-column">
+                <p>© 2025 Mischa Siegrist, Secan Akbulut, Denny Hartmann</p>
+            </div>
+            <div class="footer-links footer-column">
+                <a href="impressum.html">Impressum</a>
+                <a href="privacy.html">Datenschutzerklärung</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div id="unsupported-msg" class="hidden">
+    <h2>Die Größe Ihres Bildschirms wird nicht unterstützt</h2>
+    <p>Bitte nutzen Sie ein Gerät mit einer größeren Auflösung.</p>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>

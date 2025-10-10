@@ -144,7 +144,7 @@ footer {
 }
 
  
-.contact-form, .impressum-text{
+.impressum-text{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -159,34 +159,107 @@ footer {
     align-items: flex-start;
 }
 
+/* ---- Kontaktformular (überarbeitet) ---- */
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 330px); /* exakt zwischen Navbar & Footer */
+  padding: 40px 0;
+}
+
+.contact-form {
+  background-color: #e6e6e6;
+  border-radius: 10px;
+  padding: 32px;
+  width: 90%;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
 .contact-form h1 {
-    width: 100%;
-    text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-align: left;
 }
 
 .contact-form label {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  margin-bottom: 16px;
 }
 
-.contact-form input, .contact-form textarea {
-    padding: 8px 12px;
-    max-width: 200px;
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: Raleway Regular, sans-serif;
+}
+
+.contact-form textarea {
+  height: 350px;
+  resize: none;
 }
 
 .contact-form button {
-    width: 100%;
-    padding: 12px;
-    border: 0;
-    cursor: pointer;
+  background-color: #008000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 20px;
+  align-self: center;
+  width: 30%;
+  transition: all 0.3s ease;
 }
+
+.contact-form button:hover {
+  background-color: #009900;
+}
+
+@media (max-width: 576px) {
+  .contact-form {
+    width: 95%;
+    padding: 24px;
+  }
+  .contact-form textarea {
+    height: 200px;
+  }
+  .contact-form button {
+    width: 50%;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .contact-form {
+    width: 95%;
+    padding: 24px;
+  }
+
+  .contact-form button {
+    width: 50%;
+  }
+}
+
 
 /* This section is for the breakpoints for mobile/tablet */
 
 @media (max-width: 1700px) {
-    .navbar, .footer-content, .hero {
+    .navbar, .footer-content {
         padding: 0 130px;
     }
 }
@@ -306,20 +379,8 @@ footer {
         justify-content: center;
         align-items: center;
     }
-
-    .impressum-text {
-        padding: 60px;
-    }
-
-    .impressum-text h1 {
-        font-size: 24px;
-    }
-    .impressum-text h2 {
-        font-size: 20px;
-    }
-    
 }
-    
+
 
 
 
