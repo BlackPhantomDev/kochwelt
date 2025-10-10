@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochwelt</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/recipe.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+<div class="page-wrapper">
+    <header class="navigation">
+        <a onclick="openMenu()" href="#" class="toggle-button" >
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+        </a>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
+            </div>
+            <div class="links">
+                <a class="nav-link" href="index.html">Start</a>
+                <a class="nav-link active-link" href="#">Rezept des Tages</a>
+                <a class="nav-link" href="contact.html">Kontakt</a>
+                <a class="nav-link" href="impressum.html">Impressum</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <div class="main-recipe mw-1440">
+                <figure class="main-recipe-content">
+                    <img class="croissant-img" src="./assets/img/croissant.jpg" alt="Croissants">
+                    <figcaption class="main-recipe-caption">
+                        <div class="main-recipe-description">
+                            <h3>Franz&ouml;siche Croissants</h3>
+                            <p>
+                                Schmackhafte Croissants k&ouml;nnen auch zu Hause sehr einfach gebacken werden. 
+                                Mit ca. 30 Minuten Aufwand kannst du ein wundervolles Fr&uuml;hstück zaubern.
+                            </p>
+                        </div>
+                        <div class="main-recipe-btn">
+                            <a href="crossaint.html">Rezept &ouml;ffnen</a>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    
+        <section class="gray-container">
+            <div class="recipes mw-1440">
+                <h3>Lust auf was neues?</h3>
+                <div class="recipes-columns">
+                    <div class="column">
+                        <a href="./doener.html">
+                            <figure class="column-img">
+                                <img src="./assets/img/doener.jpg" alt="">
+                                <figcaption class="column-caption">
+                                    D&ouml;ner
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="#">
+                            <figure class="column-img">
+                                <img src="./assets/img/salad.jpg" alt="">
+                                <figcaption class="column-caption">
+                                    Kartoffel Suppe
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="./roesti.html">
+                            <figure class="column-img">
+                                <img src="./assets/img/roesti.jpg" alt="">
+                                <figcaption class="column-caption">
+                                    R&ouml;sti
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section>
+            <div class="fun-fact-container mw-1440">
+                <h3>Pfanne vs. Wok - Was ist besser?</h3>
+                <div class="fun-fact">
+                    <figcaption class="fun-fact-caption">
+                        <p>
+                            Weder Wok noch Pfanne ist grundsätzlich besser. Die Wahl hängt vom Gericht ab. 
+                            Eine Pfanne ist besser für gleichmäßige Hitze, das Anbraten größerer Stücke wie Steaks oder für das Garen bei niedrigeren Temperaturen. 
+                            Ein Wok ist ideal für das schnelle, heiße Pfannenrühren von Reisgerichten oder Gemüse, da er dank seiner 
+                            Trichterform eine sehr hohe Hitze im Zentrum und kühlere Zonen am Rand bietet.
+                        </p>    
+                    </figcaption>
+                    <figure class="fun-fact-img">
+                        <img src="./assets/img/wok.jpg" alt="">
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <img class="footer-logo" src="./assets/img/logo_small.png" alt="Logo">
+            </div>
+            <div class="copyright footer-column">
+                <p>© 2025<br> Mischa Siegrist, Secan Akbulut, Denny Hartmann</p>
+            </div>
+            <div class="footer-links footer-column">
+                <a href="impressum.html">Impressum</a>
+                <a href="privacy.html">Datenschutzerkl&auml;rung</a>
+            </div>
+        </div>
+    </footer>
+</div>
+    <div id="unsupported-msg" class="hidden">
+        <h2>Die Größe Ihres Bildschirms wird nicht unterstützt</h2>
+        <p>Bitte nutzen Sie ein Gerät mit einer größeren Auflösung.</p>
+    </div>
+     <script src="./script.js"></script>
+</body>
+</html>
