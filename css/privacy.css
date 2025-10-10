@@ -1,39 +1,29 @@
-/* -------------------------------------------------
-   Überschriften
-   ------------------------------------------------- */
 h1, h2, h3, h4 {
     color: #2c3e50;
-    margin-top: 2rem;
-    margin-bottom: .5rem;
+    margin-top: 32px;
+    margin-bottom: 16px;
     font-weight: 600;
 }
-h1 { font-size: 2.2rem; }
-h2 { font-size: 1.8rem; border-bottom: 2px solid #e0e0e0; padding-bottom: .3rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.2rem; }
+h1 { font-size: 36px; }
+h2 { font-size: 28px; border-bottom: 2px solid #e0e0e0; padding-bottom: 5px; }
+h3 { font-size: 24px; }
 
-/* -------------------------------------------------
-   Listen & Aufzählungen
-   ------------------------------------------------- */
 ul, ol {
-    margin-left: 2rem;
-    margin-bottom: 1rem;
+    margin-left: 32px;
+    margin-bottom: 16px;
 }
 li {
-    margin-bottom: .4rem;
+    margin-bottom: 8px;
 }
 
-/* -------------------------------------------------
-   Tabellen (falls du welche nutzt)
-   ------------------------------------------------- */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
+    margin: 24px 0;
 }
 th, td {
     border: 1px solid #ddd;
-    padding: .75rem;
+    padding: 12px;
     text-align: left;
 }
 th {
@@ -41,9 +31,6 @@ th {
     font-weight: 600;
 }
 
-/* -------------------------------------------------
-   Hervorhebungen & Links
-   ------------------------------------------------- */
 a {
     color: #0066cc;
     text-decoration: underline;
@@ -52,34 +39,17 @@ a:hover {
     color: #004999;
 }
 
-/* -------------------------------------------------
-   Hinweisboxen (z. B. wichtige Infos)
-   ------------------------------------------------- */
-.notice {
-    background-color: #fff9e6;
-    border-left: 4px solid #ffcc00;
-    padding: 1rem;
-    margin: 1.5rem 0;
-    font-style: italic;
+main {
+    margin: 50px;
 }
-
-/* -------------------------------------------------
-   Abstand & Trennung
-   ------------------------------------------------- */
 .privacy-text {
-    padding: 2rem;
-    margin-bottom: 2.5rem;
-}
-hr {
-    border: none;
-    border-top: 1px solid #e0e0e0;
-    margin: 2rem 0;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
-/* -------------------------------------------------
-   Responsives Design (kleine Bildschirme)
-   ------------------------------------------------- */
+
 @media (max-width: 768px) {
-    h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.5rem; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    p, strong, a { font-size: 15px; }
 }
