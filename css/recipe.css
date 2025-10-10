@@ -28,19 +28,19 @@
 
 /* Bild */
 .croissant-img {
-    flex: 1 1;      /* wächst, schrumpft, Mindestbreite 300px */
-    max-width: 50%;      /* verhindert, dass das Bild breiter als sein Container wird */
+    flex: 1 1; 
+    max-width: 50%;      
     object-fit: cover;
     border-radius: 15px;
 }
 
 /* Caption */
 .main-recipe-caption {
-    flex: 1 1;      /* gleiche Flex‑Regeln wie beim Bild */
+    flex: 1 1;     
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* vertikaler Abstand zwischen Text & Button */
-    min-width: 0;         /* wichtig, damit Text nicht überläuft */
+    justify-content: space-between; 
+    min-width: 0;      
 }
 
 
@@ -122,130 +122,6 @@ h3 {
     width: 70%;
 }
 
-/* @media (max-width: 1187px) {
-    .column-img img, .fun-fact-img img {
-        width: 200px;
-    }
-} */
-
-@media (max-width: 992px) {
-    .recipes, .fun-fact-container {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-    .fun-fact-caption {
-        width: 50%;
-    }
-    .main-recipe-content {
-        padding: 50px 100px;
-    }
-    .main-recipe-btn {
-        margin-bottom: 0;
-    }
-    .main-recipe-description {
-        gap: 10px;
-    }
-    .main-recipe-description h3 {
-        font-size: 21px;
-    }
-    .main-recipe-description p {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 767px) {
-    .recipes, .fun-fact-container {
-        height: auto;
-        padding-left: 80px;
-        padding-right: 80px;
-    }
-    .recipes-columns, .fun-fact {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        padding-top: 30px;
-    }
-
-    .main-recipe-content {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 30px;
-        padding: 40px 80px;
-    }
-
-    /* Bild */
-    .croissant-img {
-        flex: 1 1; 
-        max-width: 100%;  
-        object-fit: cover;
-        border-radius: 15px;
-    }
-
-    /* Caption */
-    .main-recipe-caption {
-        flex: 1 1;   
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; 
-        min-width: 0; 
-        gap: 30px;
-    }
-        
-    .main-recipe-description {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        gap: 20px;
-        width: 100%;
-    }
-    .main-recipe-description h3 {
-        font-size: 24px;
-    }
-    .main-recipe-description p {
-        font-size: 16px;
-    }
-    .main-recipe-btn {
-        border: 15px;
-        background-color: green;
-        height: 45px;
-        width: auto;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 0;
-    }
-
-    .column-img, .fun-fact-img {
-        display: flex;
-        justify-content: center;
-    }
-
-    .fun-fact-caption {
-        width: 100%;
-    }
-}
-
-@media (max-width: 576px) {
-    .recipes, .fun-fact-container {
-        padding-left: 60px;
-        padding-right: 60px;
-    }
-}
-
-@media (max-width: 500px) {
-    .main-recipe-description h3, h3 {
-        font-size: 22px;
-    }
-}
-@media (max-width: 400px) {
-    .main-recipe-description h3, h3 {
-        font-size: 20px;
-    }
-}
 
 /* Recipe Page */
 
@@ -403,13 +279,123 @@ td {
     font-size: 24px;
 }
 
+/* Recipe of the Day */
+@media (max-width: 992px) {
+    .recipes, .fun-fact-container {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .fun-fact-caption {
+        width: 50%;
+    }
+    .main-recipe-content {
+        padding: 50px 100px;
+    }
+    .main-recipe-btn {
+        margin-bottom: 0;
+    }
+    .main-recipe-description {
+        gap: 10px;
+    }
+    .main-recipe-description h3 {
+        font-size: 21px;
+    }
+    .main-recipe-description p {
+        font-size: 15px;
+    }
+}
+/* -------- */
+
 @media (max-width: 767px) {
+    /* Recipe of the Day */
+    .recipes, .fun-fact-container {
+        height: auto;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .recipes-columns, .fun-fact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding-top: 30px;
+    }
+
+    .main-recipe-content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        padding: 40px 80px;
+    }
+
+    /* Bild */
+    .croissant-img {
+        flex: 1 1; 
+        max-width: 100%;  
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    /* Caption */
+    .main-recipe-caption {
+        flex: 1 1;   
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        min-width: 0; 
+        gap: 30px;
+    }
+        
+    .main-recipe-description {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 20px;
+        width: 100%;
+    }
+    .main-recipe-description h3 {
+        font-size: 24px;
+    }
+    .main-recipe-description p {
+        font-size: 16px;
+    }
+    .main-recipe-btn {
+        border: 15px;
+        background-color: green;
+        height: 45px;
+        width: auto;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+
+    .column-img, .fun-fact-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .fun-fact-caption {
+        width: 100%;
+    }
+
+    /* Recipe */
     main {
         padding: 0 80px;
     }
 }
 
 @media (max-width: 576px) {
+    /* Recipe of the Day */
+        .recipes, .fun-fact-container {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    /* Recipe */
     main {
         padding: 0 60px;
     }
@@ -432,6 +418,19 @@ td {
         align-items: flex-start;
     }
 }
+
+/* Recipe of the Day */
+@media (max-width: 500px) {
+    .main-recipe-description h3, h3 {
+        font-size: 22px;
+    }
+}
+@media (max-width: 400px) {
+    .main-recipe-description h3, h3 {
+        font-size: 20px;
+    }
+}
+/* ---- */
 
 @media (max-width: 470px) {
     .description-columns {
