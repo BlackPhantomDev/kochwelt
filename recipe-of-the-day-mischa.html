@@ -9,15 +9,10 @@
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
 </head>
 <style>
-    .main-recipe, .recipes, .fun-fact-container {
+    .recipes, .fun-fact-container {
         display: flex;
         margin: auto;
         height: 400px;
-    }
-
-    .main-recipe {
-        padding: 60px 130px;
-        gap: 40px;
     }
 
     .recipes, .fun-fact-container {
@@ -27,41 +22,64 @@
         padding: 40px 130px;
     }
 
+    .main-recipe {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .main-recipe-content {
+        display: flex;
+        align-items: stretch;
+        gap: 30px;
+        padding: 50px 130px;
+    }
+
+    /* Bild */
+    .croissant-img {
+        flex: 1 1;      /* wächst, schrumpft, Mindestbreite 300px */
+        max-width: 50%;      /* verhindert, dass das Bild breiter als sein Container wird */
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    /* Caption */
+    .main-recipe-caption {
+        flex: 1 1;      /* gleiche Flex‑Regeln wie beim Bild */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* vertikaler Abstand zwischen Text & Button */
+        min-width: 0;         /* wichtig, damit Text nicht überläuft */
+    }
+    
+
+    .main-recipe-description {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 30px;
+        width: 100%;
+    }
+    .main-recipe-btn {
+        border: 15px;
+        background-color: green;
+        height: 45px;
+        width: 220px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 10%;
+    }
+    .main-recipe-btn a {color: white;}
+
     .gray-container {
         background-color: rgb(238, 238, 238);
     }
 
-    .main-recipe-img {
-        display: flex;
-        align-items: center;
-        width: 50%;
-    }
-    .main-recipe-img img {
-        height: 100%;
-        max-width: 100%;
-        object-fit: cover;
-        border-radius: 7px;
-    }
     h3 {
         font-size: 24px;
         letter-spacing: 1px;
-    }
-    .main-recipe-img-caption {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        max-height: 50%;
-        width: 50%;
-    }
-    .main-recipe-img-caption p {
-        font-size: 18px;
-    }
-    .btn-to-recipe {
-        text-decoration: none;
-        color: white;
-        background-color: rgb(0, 150, 0);
-        padding: 10px 40px;
-        max-width: 103px;
     }
 
     .recipes-columns, .fun-fact {
@@ -106,25 +124,37 @@
     } */
 
     @media (max-width: 992px) {
-        .main-recipe, .recipes, .fun-fact-container {
+        .recipes, .fun-fact-container {
             padding-left: 100px;
             padding-right: 100px;
         }
         .fun-fact-caption {
             width: 50%;
         }
-        /* .column-img img, .fun-fact-img img {
-            width: 160px;
-        } */
+        .main-recipe-content {
+            padding: 50px 100px;
+        }
+        .main-recipe-btn {
+            margin-bottom: 0;
+        }
+        .main-recipe-description {
+            gap: 10px;
+        }
+        .main-recipe-description h3 {
+            font-size: 21px;
+        }
+        .main-recipe-description p {
+            font-size: 15px;
+        }
     }
 
     @media (max-width: 767px) {
-        .main-recipe, .recipes, .fun-fact-container {
+        .recipes, .fun-fact-container {
             height: auto;
             padding-left: 80px;
             padding-right: 80px;
         }
-        .main-recipe, .recipes-columns, .fun-fact {
+        .recipes-columns, .fun-fact {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -133,10 +163,57 @@
             padding-top: 30px;
         }
 
-        .main-recipe-img, .main-recipe-img-caption {
-            width: 100%;
-            gap: 20px;
+        .main-recipe-content {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 30px;
+            padding: 40px 80px;
         }
+
+        /* Bild */
+        .croissant-img {
+            flex: 1 1;      /* wächst, schrumpft, Mindestbreite 300px */
+            max-width: 100%;      /* verhindert, dass das Bild breiter als sein Container wird */
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* Caption */
+        .main-recipe-caption {
+            flex: 1 1;      /* gleiche Flex‑Regeln wie beim Bild */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* vertikaler Abstand zwischen Text & Button */
+            min-width: 0;         /* wichtig, damit Text nicht überläuft */
+            gap: 30px;
+        }
+            
+        .main-recipe-description {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 20px;
+            width: 100%;
+        }
+        .main-recipe-description h3 {
+            font-size: 24px;
+        }
+        .main-recipe-description p {
+            font-size: 16px;
+        }
+        .main-recipe-btn {
+            border: 15px;
+            background-color: green;
+            height: 45px;
+            width: auto;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 0;
+        }
+
 
         .column-img, .fun-fact-img {
             display: flex;
@@ -152,7 +229,7 @@
     }
 
     @media (max-width: 576px) {
-        .main-recipe, .recipes, .fun-fact-container {
+        .recipes, .fun-fact-container {
             padding-left: 60px;
             padding-right: 60px;
         }
@@ -183,17 +260,21 @@
     <main>
         <section>
             <div class="main-recipe mw-1440">
-                <figure class="main-recipe-img">
-                    <img src="./assets/img/croissant.jpg" alt="Croissants">
+                <figure class="main-recipe-content">
+                    <img class="croissant-img" src="./assets/img/croissant.jpg" alt="Croissants">
+                    <figcaption class="main-recipe-caption">
+                        <div class="main-recipe-description">
+                            <h3>Franz&ouml;siche Croissants</h3>
+                            <p>
+                                Schmackhafte Croissants k&ouml;nnen auch zu Hause sehr einfach gebacken werden. 
+                                Mit ca. 30 Minuten Aufwand kannst du ein wundervolles Fr&uuml;hstück zaubern.
+                            </p>
+                        </div>
+                        <div class="main-recipe-btn">
+                            <a href="#">Rezept &ouml;ffnen</a>
+                        </div>
+                    </figcaption>
                 </figure>
-                <figcaption class="main-recipe-img-caption">
-                    <h3>Franz&ouml;siche Croissants</h3>
-                    <p>
-                        Schmackhafte Croissants k&ouml;nnen auch zu Hause sehr einfach gebacken werden. 
-                        Mit ca. 30 Minuten Aufwand kannst du ein wundervolles Fr&uuml;hstück zaubern.
-                    </p>
-                    <a class="btn-to-recipe" href="#">Rezept &ouml;ffnen</a>
-                </figcaption>
             </div>
         </section>
     
