@@ -10,7 +10,6 @@ body {
     font-family: Raleway Regular, sans-serif;
 }
 
-
 .mw-1440 {
     max-width: 1440px;
 }
@@ -19,6 +18,8 @@ body {
     display: none;
 }
 
+
+/* Primary Styles */
 /* This section is for the navbar */
 
 .navigation {
@@ -159,8 +160,21 @@ footer {
     align-items: flex-start;
 }
 
-/* ---- Kontaktformular (überarbeitet) ---- */
 
+
+
+/* Secondary Styles */
+
+/* Button for index.html */
+
+.link-to-recipes {
+    background-color: #009900;
+    color: white;
+    padding: 15px 70px;
+}
+
+
+/* This section is for Contact */
 
 .contact-form {
   background-color: #e6e6e6;
@@ -249,6 +263,7 @@ footer {
 }
 
 
+
 /* This section is for the breakpoints for mobile/tablet */
 
 @media (max-width: 1700px) {
@@ -256,7 +271,6 @@ footer {
         padding: 0 130px;
     }
 }
-
 
 @media (max-width: 1190px) {
 
