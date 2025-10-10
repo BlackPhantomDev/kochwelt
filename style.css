@@ -161,13 +161,6 @@ footer {
 
 /* ---- Kontaktformular (überarbeitet) ---- */
 
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 330px); /* exakt zwischen Navbar & Footer */
-  padding: 40px 0;
-}
 
 .contact-form {
   background-color: #e6e6e6;
