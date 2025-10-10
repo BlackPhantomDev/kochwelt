@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<style>
+    main {
+        padding: 0 130px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    .recipe-header {
+        padding-top: 64px;
+        width: 100%;
+    }
+
+    .recipe-header-img {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .recipe-header-img img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .description-columns {
+        display: flex;
+        gap: 20px;
+    }
+
+    .header-description {
+        padding-bottom: 72px;
+    }
+
+    .description {
+        padding-bottom: 24px;
+    }
+
+    .grey-box {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(241, 241, 241);
+        padding: 6px 8px;
+        border-radius: 10px;
+        gap: 10px;
+    }
+
+    .grey-box img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .seperator {
+        width: 100%;
+        height: 2px;
+        background-color: rgb(241, 241, 241);
+    }
+
+    .recipe-ingredients {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 48px;
+    }
+
+    .calculation {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0;
+        padding: 20px 0;
+    }
+
+    .calculation-mobile {
+        display: flex;
+    }
+
+    .calculation label {
+        padding-right: 10px;
+    }
+
+    #portions {
+        width: 132px;
+        height: 41px;
+        margin: 0;
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+
+    #portions-btn {
+        margin: 0;
+        padding: 0 16px;
+        height: 41px;
+        line-height: 41px;
+        border: none;
+        background: rgb(0, 160, 0);
+        color: #fff;
+        cursor: pointer;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .grey-line {
+        background-color: rgb(241, 241, 241);
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td {
+        text-align: left;
+        padding: 14px 24px;
+        border-radius: 10px;
+    }
+
+
+    @media (max-width: 400px) {
+        .calculation {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    .preparation {
+        width: 100%;
+        padding-bottom: 48px;
+    }
+
+    .preparation h2 {
+        padding-bottom: 24px;
+    }
+
+    .author {
+        width: 100%;
+        padding-bottom: 48px;
+    }
+
+    .author h3 {
+        padding-bottom: 24px;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .profile-picture {
+        width: 72px;
+        border-radius: 50%;
+    }
+
+    .profile-caption {
+        font-family: Raleway Light;
+        font-size: 24px;
+    }
+
+    @media (max-width: 610px) {
+
+        .recipe-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cook-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .preparation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    }
+</style>
+
+<head>
+    <title>Kochwelt</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="navigation">
+            <a onclick="openMenu()" href="#" class="toggle-button">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+            </a>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img class="navbar-logo" src="./assets/img/logo.png" alt="Bild Kochwelt"></a>
+                </div>
+                <div class="links">
+                    <a class="nav-link" href="index.html">Start</a>
+                    <a class="nav-link" href="#">Rezept des Tages</a>
+                    <a class="nav-link" href="contact.html">Kontakt</a>
+                    <a class="nav-link" href="impressum.html">Impressum</a>
+                </div>
+            </nav>
+        </header>
+        <main class="main-potatoe-soup">
+            <section class="recipe-header">
+                <h1>Kartoffelsuppe</h1>
+
+                <div class="recipe-header-img">
+                    <img class="potatoe-soup-img" src="./assets/img/potato-soup-2152265_1280.jpg"
+                        alt="pic.potatoe-soup">
+                </div>
+                <section class="cook-info">
+
+                    <div class="infotext-recipe">
+                        <img class="img-recipe " src="./assets/img/icons/clock-regular.svg" alt="clock">
+                        <span>50Min.</span>
+                    </div>
+
+                    <div class="infotext-recipe">
+                        <img class="img-recipe " src="./assets/img/icons/brain-solid.svg" alt="brain">
+                        <span>simple</span>
+                    </div>
+
+                    <div class="infotext-recipe">
+                        <img class="img-recipe text-color" src="./assets/img/icons/calendar-alt-regular.svg"
+                            alt="calendar">
+                        <span>30.09.2025</span>
+                    </div>
+                </section>
+
+            </section>
+            <div class="line"></div>
+            <section class="recipe-ingredients">
+
+                <form class="portionen">
+                    <p class="portionen-text">Zutaten für</p>
+                    <input type="number" id="portions" min="1" max="20" value="1">
+                    <button type="button" class="button-portionen" onclick="calcIng()">Portion(en)</button>
+                </form>
+
+                <table id="ingredients">
+                    <tr class="tr-design-color">
+                        <td data-basis="0.5">0.5 Kilo Kartoffeln </td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td data-basis="125">125g Schinkenspeck</td>
+                    </tr>
+
+                    <tr class="tr-design-color">
+                        <td data-basis="1">1 Zwiebeln</td>
+                    </tr>
+
+                    <tr>
+                        <td data-basis="20">20g Petersilie</td>
+                    </tr>
+
+                    <tr class="tr-design-color">
+                        <td data-basis="2">2 Wienderwürstchen</td>
+                    </tr>
+
+                    <tr>
+                        <td>Salz und Pfeffer</td>
+                    </tr>
+                    <tr class="tr-design-color">
+                        <td>Öl</td>
+                    </tr>
+                </table>
+            </section>
+            <section class="preparation">
+
+                <h2>Zubereitung</h2>
+
+                <div class="infotext-recipe ">
+                    <img class="img-recipe" src="./assets/img/icons/clock-regular.svg" alt="clock">
+                    <span>ca.20 Minuten</span>
+
+                </div>
+                <div class="description-text">
+                    <p>Für diese herzhafte Kartoffelsuppe schälst du zunächst die Kartoffeln und schneidest sie in
+                        kleine
+                        Würfel. Danach schälst und hackst du die Zwiebeln fein. In einem großen Topf erhitzt du etwas Öl
+                        und
+                        gibst den gewürfelten Schinkenspeck sowie die Zwiebeln hinein. Lass alles kurz anbraten, bis die
+                        Zwiebeln glasig sind und der Speck sein Aroma entfaltet.</p>
+
+                    <p> Anschließend gibst du die Kartoffelwürfel dazu und füllst den Topf mit Wasser auf, sodass die
+                        Kartoffeln
+                        gut bedeckt sind. Mit Salz und Pfeffer würzen und alles etwa 20 Minuten köcheln lassen, bis die
+                        Kartoffeln weich sind.</p>
+
+                    <p> Währenddessen schneidest du die Wienerwürstchen in Scheiben. Sobald die Kartoffeln gar sind,
+                        kannst
+                        du
+                        die Suppe entweder stückig lassen oder einen Teil mit dem Pürierstab fein mixen, damit sie
+                        cremiger
+                        wird. Danach die Wurstscheiben hineingeben und noch ein paar Minuten in der heißen Suppe ziehen
+                        lassen.</p>
+
+                    <p> Zum Schluss mit frisch gehackter Petersilie bestreuen und heiß servieren.</p>
+                </div>
+            </section>
+            <section class="author">
+
+                <h3>Rezept erstellt von</h3>
+
+                <span class="recipe-from">
+                    <img class="profilepic-custom" src="./assets/img/profile.png" alt="profilepic">
+                    <p>Denny Hartmann</p>
+                </span>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img class="footer-logo" src="./assets/img/logo_small.png" alt="Logo">
+                </div>
+                <div class="copyright footer-column">
+                    <p>© 2025 Mischa Siegrist, Secan Akbulut, Denny Hartmann</p>
+                </div>
+                <div class="footer-links footer-column">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="privacy.html">Datenschutzerkl&auml;rung</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="unsupported-msg" class="hidden">
+        <h2>Die Größe Ihres Bildschirms wird nicht unterstützt</h2>
+        <p>Bitte nutzen Sie ein Gerät mit einer größeren Auflösung.</p>
+    </div>
+
+    <script src="./script.js"></script>
+
+
+
+</body>
+
+</html>
