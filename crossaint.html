@@ -148,6 +148,16 @@
         padding-bottom: 24px;
     }
 
+    .ul-list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    h3 {
+        padding: 10px 0 10px 0
+    }
+
     .author {
         width: 100%;
         padding-bottom: 48px;
@@ -173,27 +183,19 @@
         font-size: 24px;
     }
 
-    @media (max-width: 610px) {
-
-        .recipe-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+     @media (max-width: 767px) {
+            main {
+                padding: 0 80px;
+            }
         }
 
-        .cook-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+       @media (max-width: 576px) {
+            main {
+                padding: 0 60px;
+            }
+        }    
 
-        .preparation {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-    }
+  
 </style>
 
 <head>
@@ -257,41 +259,49 @@
                     <p class="portionen-text">Zutaten für</p>
                     <input type="number" id="portions" min="1" max="20" value="1">
                     <button type="button" class="button-portionen" onclick="calcIng()">Portion(en)</button>
+                    <p class="portionen-text">1 Portion = 9 Crossaint</p>
                 </form>
 
                 <table id="ingredients">
 
 
                     <tr class="tr-design-color">
-                        <td data-basis="33,3">33,3g Weizenmehl</td>
-                    </tr>
-
-                     <tr>
-                        <td data-basis="0,11">0,11g  Salz</td>
-                    </tr>
-
-                    <tr class="tr-design-color">
-                        <td data-basis="3,33">3,33g Butter</td>
+                        <td data-basis="300">300g Weizenmehl</td>
                     </tr>
 
                     <tr>
-                        <td data-basis="0,06">0,06g frische Hefe</td>
+                        <td data-basis="1">1 TL Salz</td>
                     </tr>
 
                     <tr class="tr-design-color">
-                        <td data-basis="2,78">2,78g Zucker</td>
+                        <td data-basis="30">30 g Butter</td>
                     </tr>
 
                     <tr>
-                        <td data-basis="0,11">0,11 TL Honig</td>
+                        <td data-basis="21">21 g frische Hefe</td>
                     </tr>
 
                     <tr class="tr-design-color">
-                        <td data-basis="16,67">16,67ml Milch</td>
+                        <td data-basis="25">25 g Zucker</td>
+                    </tr>
+
+                    <tr>
+                        <td data-basis="1">1 TL Honig</td>
+                    </tr>
+
+                    <tr class="tr-design-color">
+                        <td data-basis="150">150 ml Milch</td>
                     </tr>
                 </table>
 
-                <span></span>
+                <section class="ul-list">
+                    <h3>Außerdem</h3>
+                    <ul>
+                        <li>Butter</li>
+                        <li>Ei</li>
+                    </ul>
+                </section>
+
             </section>
             <section class="preparation">
 
@@ -299,31 +309,59 @@
 
                 <div class="infotext-recipe ">
                     <img class="img-recipe" src="./assets/img/icons/clock-regular.svg" alt="clock">
-                    <span>ca.20 Minuten</span>
+                    <span>ca. 3h</span>
 
                 </div>
                 <div class="description-text">
-                    <p>Für diese herzhafte Kartoffelsuppe schälst du zunächst die Kartoffeln und schneidest sie in
-                        kleine
-                        Würfel. Danach schälst und hackst du die Zwiebeln fein. In einem großen Topf erhitzt du etwas Öl
-                        und
-                        gibst den gewürfelten Schinkenspeck sowie die Zwiebeln hinein. Lass alles kurz anbraten, bis die
-                        Zwiebeln glasig sind und der Speck sein Aroma entfaltet.</p>
+                    <p>Für den Hefeteig Mehl und Salz in eine Rührschüssel geben.
+                        Butter in kleinen Stückchen und Zucker hinzugeben.
+                        Milch in einem kleinen Topf lauwarm erwärmen, die Hefe hinein bröckeln, Honig darin auflösen.
+                        Die Hefemilch mit den trockenen Zutaten zu einem geschmeidigen Hefeteig kneten.
+                        Den Teig für <strong>ca. 30 Minuten</strong> gehen lassen.</p>
 
-                    <p> Anschließend gibst du die Kartoffelwürfel dazu und füllst den Topf mit Wasser auf, sodass die
-                        Kartoffeln
-                        gut bedeckt sind. Mit Salz und Pfeffer würzen und alles etwa 20 Minuten köcheln lassen, bis die
-                        Kartoffeln weich sind.</p>
+                    <p> Die kühle Butter in gleichmäßige Scheiben schneiden, zu einem Quadrat zusammenlegen und zwischen
+                        Folie zu einer Butterplatte <strong>(20 x 20 cm)</strong> zusammenrollen.
+                        Falls nötig kurz kühl stellen. Den Hefeteig auf einer bemehlten Arbeitsfläche zu einem
+                        <strong>40 x 20 cm</strong> großen Rechteck ausrollen.
+                        Die Butterplatte auf den oberen Teil legen, den unteren Teig einmal auf die Butterplatte
+                        umschlagen, sodass die Butterplatte einmal komplett mit Teig umhüllt ist.</p>
 
-                    <p> Währenddessen schneidest du die Wienerwürstchen in Scheiben. Sobald die Kartoffeln gar sind,
-                        kannst
-                        du
-                        die Suppe entweder stückig lassen oder einen Teil mit dem Pürierstab fein mixen, damit sie
-                        cremiger
-                        wird. Danach die Wurstscheiben hineingeben und noch ein paar Minuten in der heißen Suppe ziehen
-                        lassen.</p>
+                    <p><strong>Tipp:</strong>Beim Croissant selber machen ist es sehr wichtig, dass Butter und Teig
+                        weder zu warm noch zu kalt sind.
+                        Vor allem im Sommer macht es Sinn, auch die Arbeitsfläche im Vorhinein mit Kühlakkus etwas
+                        herunter zu kühlen. </p>
 
-                    <p> Zum Schluss mit frisch gehackter Petersilie bestreuen und heiß servieren.</p>
+                    <p> Den Teig nun um eine Viertel Umdrehung gegen den Uhrzeigersinn drehen.
+                        Den Teig erneut zu einem langen Rechteck ausrollen, jetzt gibt man die erste Tour.
+                        Dafür teilt man sich gedanklich den Teig in <strong>3</strong> gleichgroße Teile ein und schlägt
+                        erst das obere Drittel,
+                        dann das untere Drittel zur Mitte, den Teig für <strong>30 Minuten</strong> kühl stellen</p>
+
+                    <p> In die Ausgangsposition legen und erneut eine Viertelumdrehung gegen den Uhrzeigersinn drehen.
+                        Den Teig für die zweite Tour wieder gedanklich in drei Teile teilen und jeweils zur Mitte hin
+                        einschlagen.
+                        Den Teig für <strong>30 Minuten</strong> kühlen. Diesen Vorgang noch zweimal wiederholen, sodass
+                        man den Teig insgesamt <strong>4 Mal</strong> touriert hat.</p>
+
+                    <p>
+                        Backofen auf <strong>180 Grad Ober-/Unterhitze (Umluft: 160 Grad)</strong> vorheizen.
+                        Den Teig nach der Kühlzeit ein letztes Mal ausrollen und mit Hilfe eines Pizzarollers in
+                        <strong>18</strong> langgezogene Dreiecke einteilen.
+                        Jedes Dreieck an der kurzen Seite etwas einschneiden.
+                    </p>
+
+                    <p>
+                        Jedes Dreieck zu dem dünnen Ende hin aufrollen, das Letzte Drittel etwas lang ziehen und
+                        komplett um den Teigling wickeln.
+                        Die Croissants auf ein Backblech legen und abgedeckt nochmals <strong>30 Minuten</strong> gehen
+                        lassen.
+                    </p>
+
+                    <p>
+                        Jedes Croissant mit Eigelb einstreichen und im vorgeheizten Backofen für <strong>ca. 20
+                            Minuten</strong> goldbraun backen.
+                        Die Croissants etwas auskühlen lassen und frisch servieren.
+                    </p>
                 </div>
             </section>
             <section class="author">
