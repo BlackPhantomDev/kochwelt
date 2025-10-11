@@ -346,13 +346,13 @@ footer {
 
 /*this section is about the potatoe spoup*/
 
-.main-potatoe-soup {
+.main {
     max-width: 1440px;
     margin: auto;
 }
 
 
-.potatoe-soup-img {
+.main-img {
     height: 200px;
     width: 100%;
     object-fit: cover;
