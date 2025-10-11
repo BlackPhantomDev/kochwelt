@@ -99,12 +99,13 @@ body {
 /* This section is for the Hero */
 
 .hero {
-    height: calc(100vh - 130px - 200px);
+    min-height: calc(100vh - 330px - 100px);
     display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center;
     gap: 20px;
+    padding: 50px 30px;
 }
 
 
