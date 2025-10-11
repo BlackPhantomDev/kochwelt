@@ -257,6 +257,19 @@ td {
     margin-bottom: 32px;
 }
 
+.optional {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.optional img {
+    width: 50%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 .author {
     width: 100%;
     padding-bottom: 48px;
@@ -400,7 +413,7 @@ td {
 
     /* Recipe */
     .recipe-main-container {
-        padding: 0 60px;
+        padding: 0 40px;
     }
     .calculation-mobile {
         display: flex;
