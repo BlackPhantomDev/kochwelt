@@ -51,5 +51,5 @@ main {
 @media (max-width: 768px) {
     h1 { font-size: 28px; }
     h2 { font-size: 24px; }
-    p, strong, a { font-size: 15px; }
+    .privacy-text p, .privacy-text strong, .privacy-text a { font-size: 15px; }
 }
