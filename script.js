@@ -19,85 +19,52 @@ function openMenu() {
 
 
 function calcIng() {
-    
-    const factor = document.getElementById('portions').value;
-    const ingredients = document.querySelectorAll("#ingredients td");
-    
+  const factor = document.getElementById('portions').value;
+  const ingredients = document.querySelectorAll("#ingredients td");
 
-    ingredients.forEach (td => {
-        // Basiswert aus Attribut lesen (z. B. 500 für Kartoffeln)
-        let base = parseFloat(td.getAttribute("data-basis"));
-        // neue Menge = Basis * Personen
-        let newQuantity = base * factor;
-        
-        const display = Number.isInteger(newQuantity) ? newQuantity : newQuantity.toFixed(2);
+  ingredients.forEach(td => {
+    const base = parseFloat(td.getAttribute("data-basis"));
+    const newQuantity = base * factor;
+    const display = Number.isInteger(newQuantity) ? newQuantity : newQuantity.toFixed(2);
 
-        // nur die führende Zahl ersetzen
-        td.textContent = td.textContent.replace(/^\d+(\.\d+)?/, display);
-    });
-    
-    
+    // nur führende Zahl ersetzen
+    td.textContent = td.textContent.replace(/^\d+(\.\d+)?/, display);
+  });
 }
 
+const factorInput = document.getElementById('portions');
 
-let input = document.getElementById('portions');
-
-input.addEventListener("keydown", function(event) {
-    let val = parseInt(input.value);
-  // Erlaubte Steuerungstasten
+if (factorInput) {
+  // Eingabeprüfung
+  factorInput.addEventListener("keydown", e => {
     const allowedKeys = [
-        "Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
+      "Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"
     ];
 
-  if (allowedKeys.includes(event.key)) {
-    return; // durchlassen
-  }
+    // Minus & Exponentialzeichen verhindern
+    if (e.key === "-" || e.key === "e") {
+      e.preventDefault();
+      return;
+    }
 
-   if (isNaN(val)) {
-    return; // leere Eingabe erlauben
-  }
+    // Steuerungstasten durchlassen
+    if (allowedKeys.includes(e.key)) return;
 
+    // Nur Zahlen 0–9 erlauben
+    if (!/[0-9]/.test(e.key)) {
+      e.preventDefault();
+    }
+  });
 
+  // Eingabe nachträglich validieren (bei Tippfehlern oder Einfügen)
+  factorInput.addEventListener("input", () => {
+    let val = parseInt(factorInput.value, 10);
 
-  // Nur Ziffern erlauben
-  if (!/^[0-9]$/.test(event.key)) {
-    event.preventDefault();
-    return;
-  }
+    // Nur Zahlen 1–20 erlauben
+    if (isNaN(val)) return;
+    if (val < 1) val = 1;
+    if (val > 20) val = 20;
 
-  // Cursor-Position ermitteln
-  const start = input.selectionStart;
-  const end = input.selectionEnd;
-
-  // neuen Wert "simulieren", falls die Taste angenommen würde
-  let newValue = 
-    input.value.substring(0, start) + 
-    event.key + 
-    input.value.substring(end);
-
-  // Zahl daraus machen
-  let number = parseInt(newValue);
-
-  // Nur zulassen, wenn es eine gültige Zahl im Bereich ist
-  if (isNaN(number) || number < 1 || number > 20) {
-    event.preventDefault();
-  }
-});
-
-
-
-input.addEventListener("input", function() {
-  let val = parseInt(input.value);
-
-  if (isNaN(val)) {
-    return; // leere Eingabe erlauben
-  }
-
-  if (val < 1) {
-    input.value = 1;
-  }
-
-  if (val > 20) {
-    input.value = 20;
-  }
-});
+    factorInput.value = val;
+  });
+}
