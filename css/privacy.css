@@ -45,6 +45,7 @@ main {
 .privacy-text {
     margin-bottom: 50px;
     width: 100%;
+    overflow-wrap: break-word;
 }
 
 
