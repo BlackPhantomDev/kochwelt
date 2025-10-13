@@ -208,6 +208,16 @@ footer {
   font-family: Raleway Regular, sans-serif;
 }
 
+.contact-section {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .contact-form textarea {
   height: 350px;
   resize: none;
