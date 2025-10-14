@@ -34,12 +34,12 @@
         <section class="recipe-header">
             <h1>Französische Croissants</h1>
             <div class="recipe-header-img">
-                <img src="./assets/img/croissant.jpg" alt="Französische Croissants">
+                <img src="./assets/img/croissant02.jpg" alt="Französische Croissants">
             </div>
             <div class="description-columns header-description">
                 <span class="grey-box">
                     <img src="./assets/img/icons/clock-regular.svg" alt="Uhr icon">
-                    <p>2 h 30 min</p>
+                    <p>4h 20min</p>
                 </span>
                 <span class="grey-box">
                     <img src="./assets/img/icons/brain-solid.svg" alt="Schwierigkeits icon">
@@ -47,7 +47,7 @@
                 </span>
                 <span class="grey-box">
                     <img src="./assets/img/icons/calendar-alt-regular.svg" alt="Kalender icon">
-                    <p>03.10.2025</p>
+                    <p>10.10.2025</p>
                 </span>
             </div>
         </section>
@@ -58,32 +58,44 @@
             <form class="calculation">
                 <p>Zutaten für:</p>
                 <div class="calculation-mobile">
-                    <input id="portions" type="number" min="1" max="20" value="8">
+                    <input id="portions" type="number" min="1" max="20" value="2">
                     <button id="portions-btn" type="button" onclick="calcIng()">Portion(en)</button>
+                </div>
+                <div>
+                    <p class="portionen-text">1 Portion = 9 Crossaints</p>
                 </div>
             </form>
 
+
             <table id="ingredients">
                 <tr class="grey-line">
-                    <td class="ing-quantity" data-basis="500">500 g Weizenmehl (Type 550)</td>
+                    <td class="ing-quantity" data-basis="300">300 g Weizenmehl (Type 550)</td>
                 </tr>
                 <tr>
-                    <td class="ing-quantity" data-basis="250">250 ml Milch (lauwarm)</td>
-                </tr>
-                <tr class="grey-line">
-                    <td class="ing-quantity" data-basis="50">50 g Zucker</td>
-                </tr>
-                <tr>
-                    <td class="ing-quantity" data-basis="1">1 Würfel frische Hefe (42 g)</td>
-                </tr>
-                <tr class="grey-line">
                     <td class="ing-quantity" data-basis="1">1 TL Salz</td>
                 </tr>
+                <tr class="grey-line">
+                    <td class="ing-quantity" data-basis="30">30 g Butter</td>
+                </tr>
                 <tr>
-                    <td class="ing-quantity" data-basis="250">250 g kalte Butter (zum Tourieren)</td>
+                    <td class="ing-quantity" data-basis="21">21 g frische Hefe</td>
                 </tr>
                 <tr class="grey-line">
-                    <td class="ing-quantity" data-basis="1">1 Ei (zum Bestreichen)</td>
+                    <td class="ing-quantity" data-basis="25">25 g Zucker</td>
+                </tr>
+                <tr>
+                    <td class="ing-quantity" data-basis="1">1 TL Honig</td>
+                </tr>
+                <tr class="grey-line">
+                    <td class="ing-quantity" data-basis="150">150 ml Milch</td>
+                </tr>
+            </table>
+            <br>
+            <h3>Ausserdem:</h3>
+            <br>
+            <table>
+                <tr class="grey-line">
+                    <td>Ei zum bestreichen</td>
                 </tr>
             </table>
         </section>
@@ -93,17 +105,59 @@
             <div class="description-columns description">
                 <span class="grey-box">
                     <img src="./assets/img/icons/clock-regular.svg" alt="Uhr icon">
-                    <p>ca. 2 h 30 min</p>
+                    <p>ca. 3h</p>
                 </span>
             </div>
             <div class="description-text">
-                <p><strong>1. Teig vorbereiten:</strong> Milch leicht erwärmen und die Hefe mit Zucker darin auflösen. Mehl, Salz und Milch-Hefe-Mischung zu einem glatten Teig verkneten. Den Teig abgedeckt ca. 30 Minuten im Kühlschrank ruhen lassen.</p>
-                <p><strong>2. Butterplatte vorbereiten:</strong> Kalte Butter zwischen zwei Backpapierblätter legen und zu einem flachen Rechteck ausrollen (ca. 1 cm dick). Ebenfalls kühl stellen.</p>
-                <p><strong>3. Teig tourieren:</strong> Den Teig zu einem Rechteck ausrollen, die Butterplatte in die Mitte legen und den Teig wie einen Briefumschlag darüberfalten. Den Teig wieder ausrollen, dann erneut falten. Diesen Vorgang zwei Mal wiederholen, zwischendurch immer 20 Minuten kühlen.</p>
-                <p><strong>4. Formen:</strong> Den Teig ca. 3 mm dick ausrollen, Dreiecke schneiden und von der breiten Seite her aufrollen. Auf ein mit Backpapier belegtes Blech legen.</p>
-                <p><strong>5. Ruhen lassen:</strong> Croissants abgedeckt ca. 30–40 Minuten gehen lassen, bis sie sichtbar größer sind.</p>
-                <p><strong>6. Backen:</strong> Mit verquirltem Ei bestreichen und im vorgeheizten Ofen bei 200 °C (Ober-/Unterhitze) ca. 15–20 Minuten goldbraun backen.</p>
-                <p><strong>7. Genießen:</strong> Warm servieren – pur, mit Marmelade oder Schokolade.</p>
+                <p>Für den Hefeteig Mehl und Salz in eine Rührschüssel geben.
+                    Butter in kleinen Stückchen und Zucker hinzugeben.
+                    Milch in einem kleinen Topf lauwarm erwärmen, die Hefe hinein bröckeln, Honig darin auflösen.
+                    Die Hefemilch mit den trockenen Zutaten zu einem geschmeidigen Hefeteig kneten.
+                    Den Teig für <strong>ca. 30 Minuten</strong> gehen lassen.</p>
+
+                <p> Die kühle Butter in gleichmäßige Scheiben schneiden, zu einem Quadrat zusammenlegen und zwischen
+                    Folie zu einer Butterplatte <strong>(20 x 20 cm)</strong> zusammenrollen.
+                    Falls nötig kurz kühl stellen. Den Hefeteig auf einer bemehlten Arbeitsfläche zu einem
+                    <strong>40 x 20 cm</strong> großen Rechteck ausrollen.
+                    Die Butterplatte auf den oberen Teil legen, den unteren Teig einmal auf die Butterplatte
+                    umschlagen, sodass die Butterplatte einmal komplett mit Teig umhüllt ist.</p>
+
+                <p><strong>Tipp:</strong>Beim Croissant selber machen ist es sehr wichtig, dass Butter und Teig
+                    weder zu warm noch zu kalt sind.
+                    Vor allem im Sommer macht es Sinn, auch die Arbeitsfläche im Vorhinein mit Kühlakkus etwas
+                    herunter zu kühlen. </p>
+
+                <p> Den Teig nun um eine Viertel Umdrehung gegen den Uhrzeigersinn drehen.
+                    Den Teig erneut zu einem langen Rechteck ausrollen, jetzt gibt man die erste Tour.
+                    Dafür teilt man sich gedanklich den Teig in <strong>3</strong> gleichgroße Teile ein und schlägt
+                    erst das obere Drittel,
+                    dann das untere Drittel zur Mitte, den Teig für <strong>30 Minuten</strong> kühl stellen</p>
+
+                <p> In die Ausgangsposition legen und erneut eine Viertelumdrehung gegen den Uhrzeigersinn drehen.
+                    Den Teig für die zweite Tour wieder gedanklich in drei Teile teilen und jeweils zur Mitte hin
+                    einschlagen.
+                    Den Teig für <strong>30 Minuten</strong> kühlen. Diesen Vorgang noch zweimal wiederholen, sodass
+                    man den Teig insgesamt <strong>4 Mal</strong> touriert hat.</p>
+
+                <p>
+                    Backofen auf <strong>180 Grad Ober-/Unterhitze (Umluft: 160 Grad)</strong> vorheizen.
+                    Den Teig nach der Kühlzeit ein letztes Mal ausrollen und mit Hilfe eines Pizzarollers in
+                    <strong>18</strong> langgezogene Dreiecke einteilen.
+                    Jedes Dreieck an der kurzen Seite etwas einschneiden.
+                </p>
+
+                <p>
+                    Jedes Dreieck zu dem dünnen Ende hin aufrollen, das Letzte Drittel etwas lang ziehen und
+                    komplett um den Teigling wickeln.
+                    Die Croissants auf ein Backblech legen und abgedeckt nochmals <strong>30 Minuten</strong> gehen
+                    lassen.
+                </p>
+
+                <p>
+                    Jedes Croissant mit Eigelb einstreichen und im vorgeheizten Backofen für <strong>ca. 20
+                        Minuten</strong> goldbraun backen.
+                    Die Croissants etwas auskühlen lassen und frisch servieren.
+                </p>
             </div>
         </section>
         
