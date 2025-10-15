@@ -427,10 +427,10 @@ footer {
 /* hide the content */
 .page-wrapper { display: none; }
 /* If device width is higher than 320px, content shows */
-@media (min-width: 321px) { .page-wrapper { display: block; } }
+@media (min-width: 320px) { .page-wrapper { display: block; } }
 
 /* otherwise the message shows up */
-@media (max-width: 320.99px) {
+@media (max-width: 319px) {
     #unsupported-msg {
         display: flex;
         flex-direction: column;
