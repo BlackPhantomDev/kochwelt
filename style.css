@@ -418,7 +418,12 @@ footer {
 
 }
 
-
+/* Impressum Card */
+@media (max-width: 400px) {
+    .impressum-text {
+        padding: 60px 40px;
+    }
+}
 
 
 
